@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BestellProgrammMitSenf
 {
-    public partial class Form1 : Form
+    public partial class View : Form
     {
-        public Form1()
+        public View()
         {
             InitializeComponent();
         }
