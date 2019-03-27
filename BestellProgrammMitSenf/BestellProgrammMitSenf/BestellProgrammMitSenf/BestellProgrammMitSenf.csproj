@@ -59,6 +59,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="common\Adresse.cs" />
+    <Compile Include="common\Kunde.cs" />
+    <Compile Include="common\Speise.cs" />
     <Compile Include="DbAccess.cs" />
     <Compile Include="View.cs">
       <SubType>Form</SubType>
