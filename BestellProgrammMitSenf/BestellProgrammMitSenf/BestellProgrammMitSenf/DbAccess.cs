@@ -90,10 +90,10 @@ public class DbAccess
         OracleCommand command = new OracleCommand("INSERT INTO Kunde(AdressNr, Name, Vorname, Email, Telefonnummer) VALUES(:pAdressNr, :pName, :pVorname, :pEmail, :pTelefonnummer)", conn);
         command.Parameters.Add( new OracleParameter( "pAdressNr", AdressNr ) );
         command.Parameters.Add( new OracleParameter( "pName", kunde.Name ) );
-        command.Parameters.Add( new OracleParameter("pVorname", kunde.Vorname) );
+        command.Parameters.Add( new OracleParameter( "pVorname", kunde.Vorname) );
         command.Parameters.Add( new OracleParameter( "pAdressNr", kunde.Vorname) );
         command.Parameters.Add( new OracleParameter( "pEmail", kunde.EMail ) );
-        command.Parameters.Add( new OracleParameter( "Telefonnummer", kunde.Telefonnummer ) );
+        command.Parameters.Add( new OracleParameter( "pTelefonnummer", kunde.Telefonnummer ) );
         int resultstate = command.ExecuteNonQuery();
         command.Transaction.Commit();
         conn.Close();
