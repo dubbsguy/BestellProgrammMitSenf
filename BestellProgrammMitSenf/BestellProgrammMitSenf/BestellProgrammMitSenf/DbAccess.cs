@@ -55,11 +55,39 @@ public class DbAccess
         return liste;
     }
 
+    public double ladeKostenLaufenderMonat()
+    {
+        conn.Open();
+        OracleCommand command = new OracleCommand("select KostenImLaufendenMonat from kostenLaufenderMonatView", conn);
+        OracleDataReader reader = command.ExecuteReader();
+        double kostenLaufenderMonat = -1;
+        if (reader.Read())
+        {
+            kostenLaufenderMonat = reader.GetDouble(0);
+        }
+        conn.Close();
+        return kostenLaufenderMonat;
+    }
+
+    public double ladeKostenTaeglich()
+    {
+        conn.Open();
+        OracleCommand command = new OracleCommand("select KostenAmTag from KostenTaeglichView", conn);
+        OracleDataReader reader = command.ExecuteReader();
+        double kostenLaufenderMonat = -1;
+        if (reader.Read())
+        {
+            kostenLaufenderMonat = reader.GetDouble(0);
+        }
+        conn.Close();
+        return kostenLaufenderMonat;
+    }
+
     public List<Kunde> ladeKunden()
     {
         conn.Open();
         List<Kunde> liste = new List<Kunde>();
-        OracleCommand command = new OracleCommand("select KundenNr, Name, Vorname, Firmierung, EMail,  Telefon, PLZ, ORT, Strasse, Hausnummer from KundenView", conn);
+        OracleCommand command = new OracleCommand("select KundenNr, Name, Vorname, Firmierung, EMail, Telefon, PLZ, ORT, Strasse, Hausnummer from KundenView", conn);
         OracleDataReader reader = command.ExecuteReader();
 
         while (reader.Read())
@@ -108,10 +136,14 @@ public class DbAccess
         command.Parameters.Add(new OracleParameter("pOrt", adresse.Ort));
         command.Parameters.Add(new OracleParameter("pStrasse", adresse.Strasse));
         command.Parameters.Add(new OracleParameter("pHausnummer", adresse.Hausnummer));
-        int resultstate = command.ExecuteNonQuery();
-        command.Transaction.Commit();
+        OracleDataReader reader = command.ExecuteReader();
+        long AdressNr = -1;
+        if (reader.Read())
+        {
+            AdressNr = reader.GetInt64(0);
+        }
         conn.Close();
-        return resultstate;
+        return AdressNr;
     }
 
     public int insertAdresse(Adresse adresse )
