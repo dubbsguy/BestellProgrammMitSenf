@@ -58,6 +58,9 @@
             this.button4 = new System.Windows.Forms.Button();
             this.Home = new System.Windows.Forms.TabPage();
             this.Finanzen = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.Bestellungen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -66,6 +69,8 @@
             this.Kunden.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kUNDEBindingSource)).BeginInit();
+            this.Home.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -180,6 +185,7 @@
             // Kunden
             // 
             this.Kunden.BackColor = System.Drawing.SystemColors.Control;
+            this.Kunden.Controls.Add(this.label2);
             this.Kunden.Controls.Add(this.button3);
             this.Kunden.Controls.Add(this.button4);
             this.Kunden.Controls.Add(this.dataGridView2);
@@ -287,6 +293,10 @@
             // Home
             // 
             this.Home.BackColor = System.Drawing.SystemColors.Control;
+            this.Home.Controls.Add(this.label3);
+            this.Home.Controls.Add(this.pictureBox1);
+            this.Home.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Home.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Home.Location = new System.Drawing.Point(4, 22);
             this.Home.Name = "Home";
             this.Home.Size = new System.Drawing.Size(802, 433);
@@ -301,6 +311,35 @@
             this.Finanzen.Size = new System.Drawing.Size(802, 433);
             this.Finanzen.TabIndex = 3;
             this.Finanzen.Text = "Finanzen";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Kunden";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(369, 196);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(146, 95);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(507, 48);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "ABS OHG Bestell-Software";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // View
             // 
@@ -319,8 +358,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.bESTELLUNGBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.Kunden.ResumeLayout(false);
+            this.Kunden.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kUNDEBindingSource)).EndInit();
+            this.Home.ResumeLayout(false);
+            this.Home.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -356,6 +399,9 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TabPage Finanzen;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
