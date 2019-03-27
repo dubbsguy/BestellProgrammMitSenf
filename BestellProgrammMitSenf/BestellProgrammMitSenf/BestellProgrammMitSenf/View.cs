@@ -25,12 +25,21 @@ namespace BestellProgrammMitSenf
             OracleCommand command = new OracleCommand("select * from user_tables",conn);
             OracleDataReader reader = command.ExecuteReader();
             String name = reader.GetName(0);
-            textBox1.Text = name;
+            //textBox1.Text = name;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void View_Load(object sender, EventArgs e)
         {
-       
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "dataSet1.KUNDE". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.kUNDETableAdapter.Fill(this.dataSet1.KUNDE);
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "dataSet1.BESTELLUNG". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.bESTELLUNGTableAdapter.Fill(this.dataSet1.BESTELLUNG);
+
+        }
+
+        private void Kunden_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
