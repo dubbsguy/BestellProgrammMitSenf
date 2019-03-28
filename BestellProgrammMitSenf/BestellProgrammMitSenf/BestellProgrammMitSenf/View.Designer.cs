@@ -30,29 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.Home = new System.Windows.Forms.TabPage();
-            this.kalenderLbl = new System.Windows.Forms.Label();
-            this.rechnungenLbl = new System.Windows.Forms.Label();
-            this.speisekartenLbl = new System.Windows.Forms.Label();
-            this.kalenderBtn = new System.Windows.Forms.Button();
-            this.rechnungenBtn = new System.Windows.Forms.Button();
-            this.speisekarteBtn = new System.Windows.Forms.Button();
-            this.kostenLbl = new System.Windows.Forms.Label();
-            this.kundenLbl = new System.Windows.Forms.Label();
-            this.kostenBtn = new System.Windows.Forms.Button();
-            this.kundenBtn = new System.Windows.Forms.Button();
-            this.bestellungenLbl = new System.Windows.Forms.Label();
-            this.bestellungenBtn = new System.Windows.Forms.Button();
-            this.firmenLbl = new System.Windows.Forms.Label();
             this.Bestellungen = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.logoPicBox = new System.Windows.Forms.PictureBox();
             this.button16 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.bestellungenHeaderBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bESTELLUNGBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -60,38 +43,26 @@
             this.button2 = new System.Windows.Forms.Button();
             this.Kunden = new System.Windows.Forms.TabPage();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.kundenHeaderBtn = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.kUNDEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Finanzen = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.rECHNUNGBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.rechnungenHeaderBtn = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.kostenHeaderBtn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.speisearteHeaderBtn = new System.Windows.Forms.Button();
             this.bESTELLUNGTableAdapter = new BestellProgrammMitSenf.DataSet1TableAdapters.BESTELLUNGTableAdapter();
             this.kUNDETableAdapter = new BestellProgrammMitSenf.DataSet1TableAdapters.KUNDETableAdapter();
             this.rECHNUNGTableAdapter = new BestellProgrammMitSenf.DataSet1TableAdapters.RECHNUNGTableAdapter();
@@ -124,29 +95,58 @@
             this.zAHLUNGSARTNRDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lIEFERADRESSNRDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dATUMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Home = new System.Windows.Forms.TabPage();
+            this.kalenderLbl = new System.Windows.Forms.Label();
+            this.rechnungenLbl = new System.Windows.Forms.Label();
+            this.speisekartenLbl = new System.Windows.Forms.Label();
+            this.kalenderBtn = new System.Windows.Forms.Button();
+            this.rechnungenBtn = new System.Windows.Forms.Button();
+            this.speisekarteBtn = new System.Windows.Forms.Button();
+            this.kostenLbl = new System.Windows.Forms.Label();
+            this.kundenLbl = new System.Windows.Forms.Label();
+            this.kostenBtn = new System.Windows.Forms.Button();
+            this.kundenBtn = new System.Windows.Forms.Button();
+            this.bestellungenLbl = new System.Windows.Forms.Label();
+            this.bestellungenBtn = new System.Windows.Forms.Button();
+            this.firmenLbl = new System.Windows.Forms.Label();
+            this.logoPicBox = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.bestellungenHeaderBtn = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.kundenHeaderBtn = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.rechnungenHeaderBtn = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.kostenHeaderBtn = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.speisearteHeaderBtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
-            this.Home.SuspendLayout();
             this.Bestellungen.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bESTELLUNGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.Kunden.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kUNDEBindingSource)).BeginInit();
             this.Finanzen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rECHNUNGBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPEISEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fIXKOSTENBindingSource)).BeginInit();
+            this.Home.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPicBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -164,188 +164,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1149, 756);
             this.tabControl1.TabIndex = 2;
-            // 
-            // Home
-            // 
-            this.Home.BackColor = System.Drawing.Color.SandyBrown;
-            this.Home.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.pizza_logo;
-            this.Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Home.Controls.Add(this.kalenderLbl);
-            this.Home.Controls.Add(this.rechnungenLbl);
-            this.Home.Controls.Add(this.speisekartenLbl);
-            this.Home.Controls.Add(this.kalenderBtn);
-            this.Home.Controls.Add(this.rechnungenBtn);
-            this.Home.Controls.Add(this.speisekarteBtn);
-            this.Home.Controls.Add(this.kostenLbl);
-            this.Home.Controls.Add(this.kundenLbl);
-            this.Home.Controls.Add(this.kostenBtn);
-            this.Home.Controls.Add(this.kundenBtn);
-            this.Home.Controls.Add(this.bestellungenLbl);
-            this.Home.Controls.Add(this.bestellungenBtn);
-            this.Home.Controls.Add(this.firmenLbl);
-            this.Home.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Home.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Home.Location = new System.Drawing.Point(4, 29);
-            this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(1141, 723);
-            this.Home.TabIndex = 2;
-            this.Home.Text = "Home";
-            // 
-            // kalenderLbl
-            // 
-            this.kalenderLbl.AutoSize = true;
-            this.kalenderLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kalenderLbl.Location = new System.Drawing.Point(950, 384);
-            this.kalenderLbl.Name = "kalenderLbl";
-            this.kalenderLbl.Size = new System.Drawing.Size(80, 20);
-            this.kalenderLbl.TabIndex = 14;
-            this.kalenderLbl.Text = "Kalender";
-            // 
-            // rechnungenLbl
-            // 
-            this.rechnungenLbl.AutoSize = true;
-            this.rechnungenLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rechnungenLbl.Location = new System.Drawing.Point(331, 160);
-            this.rechnungenLbl.Name = "rechnungenLbl";
-            this.rechnungenLbl.Size = new System.Drawing.Size(111, 20);
-            this.rechnungenLbl.TabIndex = 13;
-            this.rechnungenLbl.Text = "Rechnungen";
-            // 
-            // speisekartenLbl
-            // 
-            this.speisekartenLbl.AutoSize = true;
-            this.speisekartenLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.speisekartenLbl.Location = new System.Drawing.Point(934, 160);
-            this.speisekartenLbl.Name = "speisekartenLbl";
-            this.speisekartenLbl.Size = new System.Drawing.Size(105, 20);
-            this.speisekartenLbl.TabIndex = 12;
-            this.speisekartenLbl.Text = "Speisekarte";
-            // 
-            // kalenderBtn
-            // 
-            this.kalenderBtn.BackColor = System.Drawing.Color.Transparent;
-            this.kalenderBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_today_black_36dp;
-            this.kalenderBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.kalenderBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.kalenderBtn.FlatAppearance.BorderSize = 2;
-            this.kalenderBtn.Location = new System.Drawing.Point(938, 289);
-            this.kalenderBtn.Name = "kalenderBtn";
-            this.kalenderBtn.Size = new System.Drawing.Size(94, 92);
-            this.kalenderBtn.TabIndex = 11;
-            this.kalenderBtn.UseVisualStyleBackColor = false;
-            this.kalenderBtn.Click += new System.EventHandler(this.kalenderBtn_Click);
-            // 
-            // rechnungenBtn
-            // 
-            this.rechnungenBtn.BackColor = System.Drawing.Color.Transparent;
-            this.rechnungenBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_credit_card_black_36dp;
-            this.rechnungenBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rechnungenBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.rechnungenBtn.FlatAppearance.BorderSize = 2;
-            this.rechnungenBtn.Location = new System.Drawing.Point(335, 61);
-            this.rechnungenBtn.Name = "rechnungenBtn";
-            this.rechnungenBtn.Size = new System.Drawing.Size(94, 92);
-            this.rechnungenBtn.TabIndex = 10;
-            this.rechnungenBtn.UseVisualStyleBackColor = false;
-            this.rechnungenBtn.Click += new System.EventHandler(this.rechnungenBtn_Click);
-            // 
-            // speisekarteBtn
-            // 
-            this.speisekarteBtn.BackColor = System.Drawing.Color.Transparent;
-            this.speisekarteBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_receipt_black_36dp;
-            this.speisekarteBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.speisekarteBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.speisekarteBtn.FlatAppearance.BorderSize = 2;
-            this.speisekarteBtn.Location = new System.Drawing.Point(938, 61);
-            this.speisekarteBtn.Name = "speisekarteBtn";
-            this.speisekarteBtn.Size = new System.Drawing.Size(94, 92);
-            this.speisekarteBtn.TabIndex = 9;
-            this.speisekarteBtn.UseVisualStyleBackColor = false;
-            this.speisekarteBtn.Click += new System.EventHandler(this.speisekarteBtn_Click);
-            // 
-            // kostenLbl
-            // 
-            this.kostenLbl.AutoSize = true;
-            this.kostenLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kostenLbl.Location = new System.Drawing.Point(708, 160);
-            this.kostenLbl.Name = "kostenLbl";
-            this.kostenLbl.Size = new System.Drawing.Size(65, 20);
-            this.kostenLbl.TabIndex = 8;
-            this.kostenLbl.Text = "Kosten";
-            // 
-            // kundenLbl
-            // 
-            this.kundenLbl.AutoSize = true;
-            this.kundenLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kundenLbl.Location = new System.Drawing.Point(88, 160);
-            this.kundenLbl.Name = "kundenLbl";
-            this.kundenLbl.Size = new System.Drawing.Size(70, 20);
-            this.kundenLbl.TabIndex = 7;
-            this.kundenLbl.Text = "Kunden";
-            // 
-            // kostenBtn
-            // 
-            this.kostenBtn.BackColor = System.Drawing.Color.Transparent;
-            this.kostenBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_attach_money_black_36dp;
-            this.kostenBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.kostenBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.kostenBtn.FlatAppearance.BorderSize = 2;
-            this.kostenBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.kostenBtn.Location = new System.Drawing.Point(694, 61);
-            this.kostenBtn.Name = "kostenBtn";
-            this.kostenBtn.Size = new System.Drawing.Size(94, 92);
-            this.kostenBtn.TabIndex = 6;
-            this.kostenBtn.UseVisualStyleBackColor = false;
-            this.kostenBtn.Click += new System.EventHandler(this.kostenBtn_Click);
-            // 
-            // kundenBtn
-            // 
-            this.kundenBtn.BackColor = System.Drawing.Color.Transparent;
-            this.kundenBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_account_box_black_36dp;
-            this.kundenBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.kundenBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.kundenBtn.FlatAppearance.BorderSize = 2;
-            this.kundenBtn.Location = new System.Drawing.Point(79, 61);
-            this.kundenBtn.Name = "kundenBtn";
-            this.kundenBtn.Size = new System.Drawing.Size(94, 92);
-            this.kundenBtn.TabIndex = 5;
-            this.kundenBtn.UseVisualStyleBackColor = false;
-            this.kundenBtn.Click += new System.EventHandler(this.kundenBtn_Click);
-            // 
-            // bestellungenLbl
-            // 
-            this.bestellungenLbl.AutoSize = true;
-            this.bestellungenLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bestellungenLbl.Location = new System.Drawing.Point(75, 384);
-            this.bestellungenLbl.Name = "bestellungenLbl";
-            this.bestellungenLbl.Size = new System.Drawing.Size(114, 20);
-            this.bestellungenLbl.TabIndex = 4;
-            this.bestellungenLbl.Text = "Bestellungen";
-            // 
-            // bestellungenBtn
-            // 
-            this.bestellungenBtn.BackColor = System.Drawing.Color.Transparent;
-            this.bestellungenBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_assignment_black_18dp;
-            this.bestellungenBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bestellungenBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.bestellungenBtn.FlatAppearance.BorderSize = 2;
-            this.bestellungenBtn.Location = new System.Drawing.Point(79, 289);
-            this.bestellungenBtn.Name = "bestellungenBtn";
-            this.bestellungenBtn.Size = new System.Drawing.Size(94, 92);
-            this.bestellungenBtn.TabIndex = 3;
-            this.bestellungenBtn.UseVisualStyleBackColor = false;
-            this.bestellungenBtn.Click += new System.EventHandler(this.bestellungenBtn_Click);
-            // 
-            // firmenLbl
-            // 
-            this.firmenLbl.AutoSize = true;
-            this.firmenLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firmenLbl.Location = new System.Drawing.Point(305, 679);
-            this.firmenLbl.Name = "firmenLbl";
-            this.firmenLbl.Size = new System.Drawing.Size(529, 46);
-            this.firmenLbl.TabIndex = 1;
-            this.firmenLbl.Text = "ABS OHG Bestell-Software";
-            this.firmenLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // Bestellungen
             // 
@@ -366,6 +185,7 @@
             this.Bestellungen.Size = new System.Drawing.Size(1141, 723);
             this.Bestellungen.TabIndex = 0;
             this.Bestellungen.Text = "Bestellungen";
+            this.Bestellungen.Click += new System.EventHandler(this.Bestellungen_Click);
             // 
             // label2
             // 
@@ -401,16 +221,6 @@
             this.textBox1.TabIndex = 10;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // logoPicBox
-            // 
-            this.logoPicBox.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.pizza_logo;
-            this.logoPicBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.logoPicBox.Location = new System.Drawing.Point(1002, 34);
-            this.logoPicBox.Name = "logoPicBox";
-            this.logoPicBox.Size = new System.Drawing.Size(103, 92);
-            this.logoPicBox.TabIndex = 9;
-            this.logoPicBox.TabStop = false;
-            // 
             // button16
             // 
             this.button16.Location = new System.Drawing.Point(998, 235);
@@ -420,33 +230,6 @@
             this.button16.Text = "Bestellung bearbeiten";
             this.button16.UseVisualStyleBackColor = true;
             // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_save_black_36dp;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.button5.FlatAppearance.BorderSize = 2;
-            this.button5.Location = new System.Drawing.Point(998, 627);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(107, 53);
-            this.button5.TabIndex = 6;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // bestellungenHeaderBtn
-            // 
-            this.bestellungenHeaderBtn.BackColor = System.Drawing.Color.Transparent;
-            this.bestellungenHeaderBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_assignment_black_18dp;
-            this.bestellungenHeaderBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bestellungenHeaderBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.bestellungenHeaderBtn.FlatAppearance.BorderSize = 2;
-            this.bestellungenHeaderBtn.Location = new System.Drawing.Point(40, 34);
-            this.bestellungenHeaderBtn.Name = "bestellungenHeaderBtn";
-            this.bestellungenHeaderBtn.Size = new System.Drawing.Size(94, 92);
-            this.bestellungenHeaderBtn.TabIndex = 5;
-            this.bestellungenHeaderBtn.UseVisualStyleBackColor = false;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(998, 162);
@@ -455,6 +238,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Bestellung hinzufügen";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -497,12 +281,12 @@
             // 
             this.Kunden.BackColor = System.Drawing.Color.SandyBrown;
             this.Kunden.Controls.Add(this.button6);
-            this.Kunden.Controls.Add(this.button7);
             this.Kunden.Controls.Add(this.button8);
             this.Kunden.Controls.Add(this.button9);
+            this.Kunden.Controls.Add(this.dataGridView2);
+            this.Kunden.Controls.Add(this.button7);
             this.Kunden.Controls.Add(this.pictureBox1);
             this.Kunden.Controls.Add(this.kundenHeaderBtn);
-            this.Kunden.Controls.Add(this.dataGridView2);
             this.Kunden.Location = new System.Drawing.Point(4, 29);
             this.Kunden.Name = "Kunden";
             this.Kunden.Padding = new System.Windows.Forms.Padding(3);
@@ -518,19 +302,6 @@
             this.button6.TabIndex = 14;
             this.button6.Text = "Kunde bearbeiten";
             this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_save_black_36dp;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.button7.FlatAppearance.BorderSize = 2;
-            this.button7.Location = new System.Drawing.Point(998, 627);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(107, 53);
-            this.button7.TabIndex = 13;
-            this.button7.UseVisualStyleBackColor = false;
             // 
             // button8
             // 
@@ -550,29 +321,6 @@
             this.button9.TabIndex = 12;
             this.button9.Text = "Kunde löschen";
             this.button9.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.pizza_logo;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(1002, 34);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(103, 92);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
-            // kundenHeaderBtn
-            // 
-            this.kundenHeaderBtn.BackColor = System.Drawing.Color.Transparent;
-            this.kundenHeaderBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_account_box_black_36dp;
-            this.kundenHeaderBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.kundenHeaderBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.kundenHeaderBtn.FlatAppearance.BorderSize = 2;
-            this.kundenHeaderBtn.Location = new System.Drawing.Point(40, 34);
-            this.kundenHeaderBtn.Name = "kundenHeaderBtn";
-            this.kundenHeaderBtn.Size = new System.Drawing.Size(94, 92);
-            this.kundenHeaderBtn.TabIndex = 7;
-            this.kundenHeaderBtn.UseVisualStyleBackColor = false;
             // 
             // dataGridView2
             // 
@@ -604,10 +352,10 @@
             // 
             this.Finanzen.BackColor = System.Drawing.Color.SandyBrown;
             this.Finanzen.Controls.Add(this.button3);
-            this.Finanzen.Controls.Add(this.button4);
             this.Finanzen.Controls.Add(this.button10);
             this.Finanzen.Controls.Add(this.button11);
             this.Finanzen.Controls.Add(this.dataGridView3);
+            this.Finanzen.Controls.Add(this.button4);
             this.Finanzen.Controls.Add(this.pictureBox2);
             this.Finanzen.Controls.Add(this.rechnungenHeaderBtn);
             this.Finanzen.Location = new System.Drawing.Point(4, 29);
@@ -624,19 +372,6 @@
             this.button3.TabIndex = 19;
             this.button3.Text = "Rechnung bearbeiten";
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_save_black_36dp;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.button4.FlatAppearance.BorderSize = 2;
-            this.button4.Location = new System.Drawing.Point(998, 627);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(107, 53);
-            this.button4.TabIndex = 18;
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // button10
             // 
@@ -679,37 +414,14 @@
             this.rECHNUNGBindingSource.DataMember = "RECHNUNG";
             this.rECHNUNGBindingSource.DataSource = this.dataSet1;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.pizza_logo;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(1002, 34);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(103, 92);
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
-            // 
-            // rechnungenHeaderBtn
-            // 
-            this.rechnungenHeaderBtn.BackColor = System.Drawing.Color.Transparent;
-            this.rechnungenHeaderBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_credit_card_black_36dp;
-            this.rechnungenHeaderBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rechnungenHeaderBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.rechnungenHeaderBtn.FlatAppearance.BorderSize = 2;
-            this.rechnungenHeaderBtn.Location = new System.Drawing.Point(40, 34);
-            this.rechnungenHeaderBtn.Name = "rechnungenHeaderBtn";
-            this.rechnungenHeaderBtn.Size = new System.Drawing.Size(94, 92);
-            this.rechnungenHeaderBtn.TabIndex = 11;
-            this.rechnungenHeaderBtn.UseVisualStyleBackColor = false;
-            // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.SandyBrown;
             this.tabPage1.Controls.Add(this.button12);
-            this.tabPage1.Controls.Add(this.button13);
             this.tabPage1.Controls.Add(this.button14);
             this.tabPage1.Controls.Add(this.button15);
             this.tabPage1.Controls.Add(this.dataGridView4);
+            this.tabPage1.Controls.Add(this.button13);
             this.tabPage1.Controls.Add(this.pictureBox3);
             this.tabPage1.Controls.Add(this.kostenHeaderBtn);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
@@ -727,19 +439,6 @@
             this.button12.TabIndex = 24;
             this.button12.Text = "Rechnung bearbeiten";
             this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.Color.Transparent;
-            this.button13.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_save_black_36dp;
-            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.button13.FlatAppearance.BorderSize = 2;
-            this.button13.Location = new System.Drawing.Point(998, 627);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(107, 53);
-            this.button13.TabIndex = 23;
-            this.button13.UseVisualStyleBackColor = false;
             // 
             // button14
             // 
@@ -777,38 +476,14 @@
             this.dataGridView4.Size = new System.Drawing.Size(920, 518);
             this.dataGridView4.TabIndex = 20;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.pizza_logo;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(1002, 34);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(103, 92);
-            this.pictureBox3.TabIndex = 10;
-            this.pictureBox3.TabStop = false;
-            // 
-            // kostenHeaderBtn
-            // 
-            this.kostenHeaderBtn.BackColor = System.Drawing.Color.Transparent;
-            this.kostenHeaderBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_attach_money_black_36dp;
-            this.kostenHeaderBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.kostenHeaderBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.kostenHeaderBtn.FlatAppearance.BorderSize = 2;
-            this.kostenHeaderBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.kostenHeaderBtn.Location = new System.Drawing.Point(40, 34);
-            this.kostenHeaderBtn.Name = "kostenHeaderBtn";
-            this.kostenHeaderBtn.Size = new System.Drawing.Size(94, 92);
-            this.kostenHeaderBtn.TabIndex = 7;
-            this.kostenHeaderBtn.UseVisualStyleBackColor = false;
-            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.SandyBrown;
             this.tabPage2.Controls.Add(this.button17);
-            this.tabPage2.Controls.Add(this.button18);
             this.tabPage2.Controls.Add(this.button19);
             this.tabPage2.Controls.Add(this.button20);
             this.tabPage2.Controls.Add(this.dataGridView5);
+            this.tabPage2.Controls.Add(this.button18);
             this.tabPage2.Controls.Add(this.pictureBox4);
             this.tabPage2.Controls.Add(this.speisearteHeaderBtn);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
@@ -826,19 +501,6 @@
             this.button17.TabIndex = 29;
             this.button17.Text = "Rechnung bearbeiten";
             this.button17.UseVisualStyleBackColor = true;
-            // 
-            // button18
-            // 
-            this.button18.BackColor = System.Drawing.Color.Transparent;
-            this.button18.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_save_black_36dp;
-            this.button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button18.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.button18.FlatAppearance.BorderSize = 2;
-            this.button18.Location = new System.Drawing.Point(998, 627);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(107, 53);
-            this.button18.TabIndex = 28;
-            this.button18.UseVisualStyleBackColor = false;
             // 
             // button19
             // 
@@ -877,29 +539,6 @@
             this.dataGridView5.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView5.Size = new System.Drawing.Size(920, 518);
             this.dataGridView5.TabIndex = 25;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.pizza_logo;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox4.Location = new System.Drawing.Point(1002, 34);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(103, 92);
-            this.pictureBox4.TabIndex = 11;
-            this.pictureBox4.TabStop = false;
-            // 
-            // speisearteHeaderBtn
-            // 
-            this.speisearteHeaderBtn.BackColor = System.Drawing.Color.Transparent;
-            this.speisearteHeaderBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_receipt_black_36dp;
-            this.speisearteHeaderBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.speisearteHeaderBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.speisearteHeaderBtn.FlatAppearance.BorderSize = 2;
-            this.speisearteHeaderBtn.Location = new System.Drawing.Point(40, 34);
-            this.speisearteHeaderBtn.Name = "speisearteHeaderBtn";
-            this.speisearteHeaderBtn.Size = new System.Drawing.Size(94, 92);
-            this.speisearteHeaderBtn.TabIndex = 10;
-            this.speisearteHeaderBtn.UseVisualStyleBackColor = false;
             // 
             // bESTELLUNGTableAdapter
             // 
@@ -1119,6 +758,370 @@
             this.dATUMDataGridViewTextBoxColumn.HeaderText = "DATUM";
             this.dATUMDataGridViewTextBoxColumn.Name = "dATUMDataGridViewTextBoxColumn";
             // 
+            // Home
+            // 
+            this.Home.BackColor = System.Drawing.Color.SandyBrown;
+            this.Home.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.pizza_logo;
+            this.Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Home.Controls.Add(this.kalenderLbl);
+            this.Home.Controls.Add(this.rechnungenLbl);
+            this.Home.Controls.Add(this.speisekartenLbl);
+            this.Home.Controls.Add(this.kalenderBtn);
+            this.Home.Controls.Add(this.rechnungenBtn);
+            this.Home.Controls.Add(this.speisekarteBtn);
+            this.Home.Controls.Add(this.kostenLbl);
+            this.Home.Controls.Add(this.kundenLbl);
+            this.Home.Controls.Add(this.kostenBtn);
+            this.Home.Controls.Add(this.kundenBtn);
+            this.Home.Controls.Add(this.bestellungenLbl);
+            this.Home.Controls.Add(this.bestellungenBtn);
+            this.Home.Controls.Add(this.firmenLbl);
+            this.Home.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Home.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Home.Location = new System.Drawing.Point(4, 29);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(1141, 723);
+            this.Home.TabIndex = 2;
+            this.Home.Text = "Home";
+            // 
+            // kalenderLbl
+            // 
+            this.kalenderLbl.AutoSize = true;
+            this.kalenderLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kalenderLbl.Location = new System.Drawing.Point(950, 384);
+            this.kalenderLbl.Name = "kalenderLbl";
+            this.kalenderLbl.Size = new System.Drawing.Size(80, 20);
+            this.kalenderLbl.TabIndex = 14;
+            this.kalenderLbl.Text = "Kalender";
+            // 
+            // rechnungenLbl
+            // 
+            this.rechnungenLbl.AutoSize = true;
+            this.rechnungenLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rechnungenLbl.Location = new System.Drawing.Point(331, 160);
+            this.rechnungenLbl.Name = "rechnungenLbl";
+            this.rechnungenLbl.Size = new System.Drawing.Size(111, 20);
+            this.rechnungenLbl.TabIndex = 13;
+            this.rechnungenLbl.Text = "Rechnungen";
+            // 
+            // speisekartenLbl
+            // 
+            this.speisekartenLbl.AutoSize = true;
+            this.speisekartenLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.speisekartenLbl.Location = new System.Drawing.Point(934, 160);
+            this.speisekartenLbl.Name = "speisekartenLbl";
+            this.speisekartenLbl.Size = new System.Drawing.Size(105, 20);
+            this.speisekartenLbl.TabIndex = 12;
+            this.speisekartenLbl.Text = "Speisekarte";
+            // 
+            // kalenderBtn
+            // 
+            this.kalenderBtn.BackColor = System.Drawing.Color.Transparent;
+            this.kalenderBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_today_black_36dp;
+            this.kalenderBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.kalenderBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.kalenderBtn.FlatAppearance.BorderSize = 2;
+            this.kalenderBtn.Location = new System.Drawing.Point(938, 289);
+            this.kalenderBtn.Name = "kalenderBtn";
+            this.kalenderBtn.Size = new System.Drawing.Size(94, 92);
+            this.kalenderBtn.TabIndex = 11;
+            this.kalenderBtn.UseVisualStyleBackColor = false;
+            this.kalenderBtn.Click += new System.EventHandler(this.kalenderBtn_Click);
+            // 
+            // rechnungenBtn
+            // 
+            this.rechnungenBtn.BackColor = System.Drawing.Color.Transparent;
+            this.rechnungenBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_credit_card_black_36dp;
+            this.rechnungenBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rechnungenBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.rechnungenBtn.FlatAppearance.BorderSize = 2;
+            this.rechnungenBtn.Location = new System.Drawing.Point(335, 61);
+            this.rechnungenBtn.Name = "rechnungenBtn";
+            this.rechnungenBtn.Size = new System.Drawing.Size(94, 92);
+            this.rechnungenBtn.TabIndex = 10;
+            this.rechnungenBtn.UseVisualStyleBackColor = false;
+            this.rechnungenBtn.Click += new System.EventHandler(this.rechnungenBtn_Click);
+            // 
+            // speisekarteBtn
+            // 
+            this.speisekarteBtn.BackColor = System.Drawing.Color.Transparent;
+            this.speisekarteBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_receipt_black_36dp;
+            this.speisekarteBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.speisekarteBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.speisekarteBtn.FlatAppearance.BorderSize = 2;
+            this.speisekarteBtn.Location = new System.Drawing.Point(938, 61);
+            this.speisekarteBtn.Name = "speisekarteBtn";
+            this.speisekarteBtn.Size = new System.Drawing.Size(94, 92);
+            this.speisekarteBtn.TabIndex = 9;
+            this.speisekarteBtn.UseVisualStyleBackColor = false;
+            this.speisekarteBtn.Click += new System.EventHandler(this.speisekarteBtn_Click);
+            // 
+            // kostenLbl
+            // 
+            this.kostenLbl.AutoSize = true;
+            this.kostenLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kostenLbl.Location = new System.Drawing.Point(708, 160);
+            this.kostenLbl.Name = "kostenLbl";
+            this.kostenLbl.Size = new System.Drawing.Size(65, 20);
+            this.kostenLbl.TabIndex = 8;
+            this.kostenLbl.Text = "Kosten";
+            // 
+            // kundenLbl
+            // 
+            this.kundenLbl.AutoSize = true;
+            this.kundenLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kundenLbl.Location = new System.Drawing.Point(88, 160);
+            this.kundenLbl.Name = "kundenLbl";
+            this.kundenLbl.Size = new System.Drawing.Size(70, 20);
+            this.kundenLbl.TabIndex = 7;
+            this.kundenLbl.Text = "Kunden";
+            // 
+            // kostenBtn
+            // 
+            this.kostenBtn.BackColor = System.Drawing.Color.Transparent;
+            this.kostenBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_attach_money_black_36dp;
+            this.kostenBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.kostenBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.kostenBtn.FlatAppearance.BorderSize = 2;
+            this.kostenBtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.kostenBtn.Location = new System.Drawing.Point(694, 61);
+            this.kostenBtn.Name = "kostenBtn";
+            this.kostenBtn.Size = new System.Drawing.Size(94, 92);
+            this.kostenBtn.TabIndex = 6;
+            this.kostenBtn.UseVisualStyleBackColor = false;
+            this.kostenBtn.Click += new System.EventHandler(this.kostenBtn_Click);
+            // 
+            // kundenBtn
+            // 
+            this.kundenBtn.BackColor = System.Drawing.Color.Transparent;
+            this.kundenBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_account_box_black_36dp;
+            this.kundenBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.kundenBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.kundenBtn.FlatAppearance.BorderSize = 2;
+            this.kundenBtn.Location = new System.Drawing.Point(79, 61);
+            this.kundenBtn.Name = "kundenBtn";
+            this.kundenBtn.Size = new System.Drawing.Size(94, 92);
+            this.kundenBtn.TabIndex = 5;
+            this.kundenBtn.UseVisualStyleBackColor = false;
+            this.kundenBtn.Click += new System.EventHandler(this.kundenBtn_Click);
+            // 
+            // bestellungenLbl
+            // 
+            this.bestellungenLbl.AutoSize = true;
+            this.bestellungenLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bestellungenLbl.Location = new System.Drawing.Point(75, 384);
+            this.bestellungenLbl.Name = "bestellungenLbl";
+            this.bestellungenLbl.Size = new System.Drawing.Size(114, 20);
+            this.bestellungenLbl.TabIndex = 4;
+            this.bestellungenLbl.Text = "Bestellungen";
+            // 
+            // bestellungenBtn
+            // 
+            this.bestellungenBtn.BackColor = System.Drawing.Color.Transparent;
+            this.bestellungenBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_assignment_black_18dp;
+            this.bestellungenBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bestellungenBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.bestellungenBtn.FlatAppearance.BorderSize = 2;
+            this.bestellungenBtn.Location = new System.Drawing.Point(79, 289);
+            this.bestellungenBtn.Name = "bestellungenBtn";
+            this.bestellungenBtn.Size = new System.Drawing.Size(94, 92);
+            this.bestellungenBtn.TabIndex = 3;
+            this.bestellungenBtn.UseVisualStyleBackColor = false;
+            this.bestellungenBtn.Click += new System.EventHandler(this.bestellungenBtn_Click);
+            // 
+            // firmenLbl
+            // 
+            this.firmenLbl.AutoSize = true;
+            this.firmenLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firmenLbl.Location = new System.Drawing.Point(305, 679);
+            this.firmenLbl.Name = "firmenLbl";
+            this.firmenLbl.Size = new System.Drawing.Size(529, 46);
+            this.firmenLbl.TabIndex = 1;
+            this.firmenLbl.Text = "ABS OHG Bestell-Software";
+            this.firmenLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // logoPicBox
+            // 
+            this.logoPicBox.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.pizza_logo;
+            this.logoPicBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.logoPicBox.Location = new System.Drawing.Point(1002, 34);
+            this.logoPicBox.Name = "logoPicBox";
+            this.logoPicBox.Size = new System.Drawing.Size(103, 92);
+            this.logoPicBox.TabIndex = 9;
+            this.logoPicBox.TabStop = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_save_black_36dp;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.button5.FlatAppearance.BorderSize = 2;
+            this.button5.Location = new System.Drawing.Point(998, 627);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(107, 53);
+            this.button5.TabIndex = 6;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // bestellungenHeaderBtn
+            // 
+            this.bestellungenHeaderBtn.BackColor = System.Drawing.Color.Transparent;
+            this.bestellungenHeaderBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_assignment_black_18dp;
+            this.bestellungenHeaderBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bestellungenHeaderBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.bestellungenHeaderBtn.FlatAppearance.BorderSize = 2;
+            this.bestellungenHeaderBtn.Location = new System.Drawing.Point(40, 34);
+            this.bestellungenHeaderBtn.Name = "bestellungenHeaderBtn";
+            this.bestellungenHeaderBtn.Size = new System.Drawing.Size(94, 92);
+            this.bestellungenHeaderBtn.TabIndex = 5;
+            this.bestellungenHeaderBtn.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_save_black_36dp;
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.button7.FlatAppearance.BorderSize = 2;
+            this.button7.Location = new System.Drawing.Point(998, 627);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(107, 53);
+            this.button7.TabIndex = 13;
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.pizza_logo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(1002, 34);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(103, 92);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // kundenHeaderBtn
+            // 
+            this.kundenHeaderBtn.BackColor = System.Drawing.Color.Transparent;
+            this.kundenHeaderBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_account_box_black_36dp;
+            this.kundenHeaderBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.kundenHeaderBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.kundenHeaderBtn.FlatAppearance.BorderSize = 2;
+            this.kundenHeaderBtn.Location = new System.Drawing.Point(40, 34);
+            this.kundenHeaderBtn.Name = "kundenHeaderBtn";
+            this.kundenHeaderBtn.Size = new System.Drawing.Size(94, 92);
+            this.kundenHeaderBtn.TabIndex = 7;
+            this.kundenHeaderBtn.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_save_black_36dp;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.button4.FlatAppearance.BorderSize = 2;
+            this.button4.Location = new System.Drawing.Point(998, 627);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(107, 53);
+            this.button4.TabIndex = 18;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.pizza_logo;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(1002, 34);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(103, 92);
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // rechnungenHeaderBtn
+            // 
+            this.rechnungenHeaderBtn.BackColor = System.Drawing.Color.Transparent;
+            this.rechnungenHeaderBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_credit_card_black_36dp;
+            this.rechnungenHeaderBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rechnungenHeaderBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.rechnungenHeaderBtn.FlatAppearance.BorderSize = 2;
+            this.rechnungenHeaderBtn.Location = new System.Drawing.Point(40, 34);
+            this.rechnungenHeaderBtn.Name = "rechnungenHeaderBtn";
+            this.rechnungenHeaderBtn.Size = new System.Drawing.Size(94, 92);
+            this.rechnungenHeaderBtn.TabIndex = 11;
+            this.rechnungenHeaderBtn.UseVisualStyleBackColor = false;
+            // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.Color.Transparent;
+            this.button13.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_save_black_36dp;
+            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.button13.FlatAppearance.BorderSize = 2;
+            this.button13.Location = new System.Drawing.Point(998, 627);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(107, 53);
+            this.button13.TabIndex = 23;
+            this.button13.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.pizza_logo;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(1002, 34);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(103, 92);
+            this.pictureBox3.TabIndex = 10;
+            this.pictureBox3.TabStop = false;
+            // 
+            // kostenHeaderBtn
+            // 
+            this.kostenHeaderBtn.BackColor = System.Drawing.Color.Transparent;
+            this.kostenHeaderBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_attach_money_black_36dp;
+            this.kostenHeaderBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.kostenHeaderBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.kostenHeaderBtn.FlatAppearance.BorderSize = 2;
+            this.kostenHeaderBtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.kostenHeaderBtn.Location = new System.Drawing.Point(40, 34);
+            this.kostenHeaderBtn.Name = "kostenHeaderBtn";
+            this.kostenHeaderBtn.Size = new System.Drawing.Size(94, 92);
+            this.kostenHeaderBtn.TabIndex = 7;
+            this.kostenHeaderBtn.UseVisualStyleBackColor = false;
+            // 
+            // button18
+            // 
+            this.button18.BackColor = System.Drawing.Color.Transparent;
+            this.button18.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_save_black_36dp;
+            this.button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button18.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.button18.FlatAppearance.BorderSize = 2;
+            this.button18.Location = new System.Drawing.Point(998, 627);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(107, 53);
+            this.button18.TabIndex = 28;
+            this.button18.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.pizza_logo;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox4.Location = new System.Drawing.Point(1002, 34);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(103, 92);
+            this.pictureBox4.TabIndex = 11;
+            this.pictureBox4.TabStop = false;
+            // 
+            // speisearteHeaderBtn
+            // 
+            this.speisearteHeaderBtn.BackColor = System.Drawing.Color.Transparent;
+            this.speisearteHeaderBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_receipt_black_36dp;
+            this.speisearteHeaderBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.speisearteHeaderBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.speisearteHeaderBtn.FlatAppearance.BorderSize = 2;
+            this.speisearteHeaderBtn.Location = new System.Drawing.Point(40, 34);
+            this.speisearteHeaderBtn.Name = "speisearteHeaderBtn";
+            this.speisearteHeaderBtn.Size = new System.Drawing.Size(94, 92);
+            this.speisearteHeaderBtn.TabIndex = 10;
+            this.speisearteHeaderBtn.UseVisualStyleBackColor = false;
+            // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1130,30 +1133,30 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.View_Load);
             this.tabControl1.ResumeLayout(false);
-            this.Home.ResumeLayout(false);
-            this.Home.PerformLayout();
             this.Bestellungen.ResumeLayout(false);
             this.Bestellungen.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bESTELLUNGBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.Kunden.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kUNDEBindingSource)).EndInit();
             this.Finanzen.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rECHNUNGBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPEISEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fIXKOSTENBindingSource)).EndInit();
+            this.Home.ResumeLayout(false);
+            this.Home.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPicBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -113,6 +113,16 @@ namespace BestellProgrammMitSenf.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap baseline_cancel_black_36dp {
+            get {
+                object obj = ResourceManager.GetObject("baseline_cancel_black_36dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap baseline_credit_card_black_36dp {
             get {
                 object obj = ResourceManager.GetObject("baseline_credit_card_black_36dp", resourceCulture);
