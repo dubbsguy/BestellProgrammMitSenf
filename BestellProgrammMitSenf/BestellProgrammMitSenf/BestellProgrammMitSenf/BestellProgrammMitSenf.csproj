@@ -72,6 +72,7 @@
       <DependentUpon>AddOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="common\Adresse.cs" />
+    <Compile Include="common\Bestellung.cs" />
     <Compile Include="common\Kunde.cs" />
     <Compile Include="common\Speise.cs" />
     <Compile Include="DataSet1.Designer.cs">

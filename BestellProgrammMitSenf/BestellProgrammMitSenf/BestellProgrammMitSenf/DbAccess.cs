@@ -32,29 +32,6 @@ public class DbAccess
         return conn;
     }
 
-    public List<Speise> ladeSpeiseKarte()
-    {
-        conn.Open();
-        List<Speise> liste = new List<Speise>();
-        OracleCommand command = new OracleCommand("select SpeiseNr, BildNr, Beschreibung, Name, StandardPreis, StandardKosten from Speise", conn);
-        OracleDataReader reader = command.ExecuteReader();
-
-        while (reader.Read())
-        {
-            Speise speise = new Speise();
-            speise.SpeiseNr = reader.GetInt64(0);
-            speise.BildNr = reader.GetInt64(1);
-            speise.Beschreibung = reader.GetString(2);
-            speise.Name = reader.GetString(3);
-            speise.StandardPreis = reader.GetDouble(4);
-            speise.StandardKosten = reader.GetDouble(5);
-            liste.Add(speise);
-
-        }
-        conn.Close();
-        return liste;
-    }
-
     public double ladeKostenLaufenderMonat()
     {
         conn.Open();
@@ -81,33 +58,6 @@ public class DbAccess
         }
         conn.Close();
         return kostenLaufenderMonat;
-    }
-
-    public List<Kunde> ladeKunden()
-    {
-        conn.Open();
-        List<Kunde> liste = new List<Kunde>();
-        OracleCommand command = new OracleCommand("select KundenNr, Name, Vorname, Firmierung, EMail, Telefon, PLZ, ORT, Strasse, Hausnummer from KundenView", conn);
-        OracleDataReader reader = command.ExecuteReader();
-
-        while (reader.Read())
-        {
-            Kunde kunde = new Kunde();
-            kunde.KundenNr = reader.GetInt64(0);
-            kunde.Name = reader.GetString(1);
-            kunde.Vorname = reader.GetString(2);
-            kunde.Firmierung = reader.GetString(3);
-            kunde.EMail = reader.GetString(4);
-            kunde.Telefonnummer = reader.GetString(5);
-            kunde.adresse = new Adresse();
-            kunde.adresse.PLZ = reader.GetInt64(6);
-            kunde.adresse.Ort = reader.GetString(7);
-            kunde.adresse.Strasse = reader.GetString(8);
-            kunde.adresse.Hausnummer = reader.GetString(9);
-            liste.Add(kunde);
-        }
-        conn.Close();
-        return liste;
     }
 
     public int insertKunde( Kunde kunde )
@@ -154,6 +104,42 @@ public class DbAccess
         command.Parameters.Add(new OracleParameter("pOrt", adresse.Ort));
         command.Parameters.Add(new OracleParameter("pStrasse", adresse.Strasse));
         command.Parameters.Add(new OracleParameter("pHausnummer", adresse.Hausnummer));
+        int resultstate = command.ExecuteNonQuery();
+        command.Transaction.Commit();
+        conn.Close();
+        return resultstate;
+    }
+
+
+    public int deleteKundenAdresse( long KundenNr )
+    {
+        conn.Open();
+        OracleCommand command = new OracleCommand("delete from ADRESSE where AdressNr = (select AdressNr from Kunde where KundenNr = :pKundenNr)", conn);
+        command.Parameters.Add(new OracleParameter("pKundenNr", KundenNr));
+        int resultstate = command.ExecuteNonQuery();
+        command.Transaction.Commit();
+        conn.Close();
+        return resultstate;
+    }
+
+    public int deleteBestellung(long BestellNr)
+    {
+        conn.Open();
+        OracleCommand command = new OracleCommand("delete from Bestellung where BestellNr = : pBestellNr", conn);
+        command.Parameters.Add(new OracleParameter("pBestellNr", BestellNr));
+        int resultstate = command.ExecuteNonQuery();
+        command.Transaction.Commit();
+        conn.Close();
+        return resultstate;
+    }
+
+
+    public int deleteKunde(long KundenNr)
+    {
+        deleteKundenAdresse(KundenNr);
+        conn.Open();
+        OracleCommand command = new OracleCommand("delete from KUNDE where KundenNr = :pKundenNr", conn);
+        command.Parameters.Add(new OracleParameter("pKundenNr", KundenNr));
         int resultstate = command.ExecuteNonQuery();
         command.Transaction.Commit();
         conn.Close();
