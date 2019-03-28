@@ -15,14 +15,19 @@ namespace BestellProgrammMitSenf
 {
     public partial class View : Form
     {
+
+
         private static EqualsFilter bestellKundenNr = new EqualsFilter("KundenNr");
         private static EqualsFilter bestellZahlungsartNr = new EqualsFilter("ZahlungsartNr");
         private static RowFilterSet rowFilterSet = new RowFilterSet(new List<RowFilter> { bestellKundenNr, bestellZahlungsartNr });
 
         public View()
         {
+       
+
+
             InitializeComponent();
-            bool isSchool = false;
+            bool isSchool = true;
             string ip = (isSchool)? "172.16.200.30:1522" : "134.76.247.35:1522";
             string constr = "DATA SOURCE=" + ip + "/bbs2orcl;PASSWORD=Gruppe1;USER ID=PIZZA";
             OracleConnection conn = new OracleConnection(constr);
@@ -41,15 +46,27 @@ namespace BestellProgrammMitSenf
 
         private void View_Load(object sender, EventArgs e)
         {
+
+
+ 
+
+
+
+
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "dataSet1.FIXKOSTEN". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.fIXKOSTENTableAdapter.Fill(this.dataSet1.FIXKOSTEN);
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "dataSet1.SPEISE". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.sPEISETableAdapter.Fill(this.dataSet1.SPEISE);
             // TODO: Diese Codezeile lädt Daten in die Tabelle "dataSet1.RECHNUNG". Sie können sie bei Bedarf verschieben oder entfernen.
             //this.rECHNUNGTableAdapter.Fill(this.dataSet1.RECHNUNG);
             // TODO: Diese Codezeile lädt Daten in die Tabelle "dataSet1.KUNDE". Sie können sie bei Bedarf verschieben oder entfernen.
             // this.kUNDETableAdapter.Fill(this.dataSet1.KUNDE);
             // TODO: Diese Codezeile lädt Daten in die Tabelle "dataSet1.BESTELLUNG". Sie können sie bei Bedarf verschieben oder entfernen.
-              this.bESTELLUNGTableAdapter.Fill(this.dataSet1.BESTELLUNG);
+            this.bESTELLUNGTableAdapter.Fill(this.dataSet1.BESTELLUNG);
             dataGridView1.DataSource = bESTELLUNGBindingSource;
-           rowFilterSet.RowFilterEvent += (s, eventArgs) => { bESTELLUNGBindingSource.Filter = eventArgs.Filter;};
-           bESTELLUNGBindingSource.Filter = rowFilterSet.Filter;
+            rowFilterSet.RowFilterEvent += (s, eventArgs) => { bESTELLUNGBindingSource.Filter = eventArgs.Filter;};
+            bESTELLUNGBindingSource.Filter = rowFilterSet.Filter;
+
     
         }
 
