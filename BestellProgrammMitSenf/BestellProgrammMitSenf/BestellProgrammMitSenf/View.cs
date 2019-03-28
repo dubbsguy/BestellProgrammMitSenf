@@ -20,6 +20,7 @@ namespace BestellProgrammMitSenf
         private static EqualsFilter bestellKundenNr = new EqualsFilter("KundenNr");
         private static EqualsFilter bestellZahlungsartNr = new EqualsFilter("ZahlungsartNr");
         private static RowFilterSet rowFilterSet = new RowFilterSet(new List<RowFilter> { bestellKundenNr, bestellZahlungsartNr });
+        public static DataTable dataTable = new DataTable();
 
         public View()
         {
@@ -46,9 +47,9 @@ namespace BestellProgrammMitSenf
 
         private void View_Load(object sender, EventArgs e)
         {
-
-
  
+
+
 
 
 
@@ -66,6 +67,48 @@ namespace BestellProgrammMitSenf
             dataGridView1.DataSource = bESTELLUNGBindingSource;
             rowFilterSet.RowFilterEvent += (s, eventArgs) => { bESTELLUNGBindingSource.Filter = eventArgs.Filter;};
             bESTELLUNGBindingSource.Filter = rowFilterSet.Filter;
+
+            kUNDETableAdapter.Fill(this.dataSet1.KUNDE);
+
+            OracleConnection con = new OracleConnection("DATA SOURCE=172.16.200.30:1522/bbs2orcl;PASSWORD=Gruppe1;USER ID=PIZZA");
+            OracleDataAdapter oracleDataAdapter = new OracleDataAdapter();
+   
+
+
+            string cmd = @"
+                            SELECT b.BestellNr AS BestellNr,
+                                   b.Datum AS Bestelldatum,
+                                   b.KundenNr AS KundenNr,
+                                   k.Vorname || ' ' || k.Name AS KundenName,
+                                   '#' || be.SpeiseNr || ' ' || s.NAME AS Speise,
+                                   sg.BESCHREIBUNG AS Groesse,
+                                   be.Anzahl AS Anzahl,
+                                   NVL(zu.Name, '---') AS ExtraZutat
+                            FROM Bestellung b
+                            JOIN Kunde k
+                            ON b.KundenNr = k.KundenNr
+                            JOIN Adresse a
+                            ON b.LieferadressNr = a.adressNr
+                            JOIN Zahlungsart z
+                            ON b.ZahlungsartNr = z.ZahlungsartNr
+                            JOIN BestellElement be
+                            ON b.BestellNr = be.BestellNr
+                            JOIN Speise s
+                            ON be.SpeiseNr = s.SpeiseNr
+                            JOIN Speisengroesse sg
+                            ON be.SPEISEGROESSENID = sg.SPEISENGROESSEID
+                            LEFT OUTER JOIN ExtraZutat ez
+                            ON be.BESTELLELEMENTNR = ez.BESTELLELEMENTNR
+                            LEFT OUTER JOIN Zutat zu
+                            ON ez.ZUTATNR = zu.ZutatNr
+                            ";
+
+            // SQL Kommando zum Abfragen der Daten festlegen:
+            oracleDataAdapter.SelectCommand = new OracleCommand(cmd, con);
+            oracleDataAdapter.Fill(dataTable);
+            
+            dataGridView5.DataSource = oracleDataAdapter;
+            dataGridView6.DataSource = oracleDataAdapter;
 
     
         }
@@ -145,6 +188,11 @@ namespace BestellProgrammMitSenf
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_TextChanged(object sender, EventArgs e)
+        {
+            textBox3.Text = dataSet1.KUNDE[comboBox1.SelectedIndex].NAME;
         }
     }
 }
