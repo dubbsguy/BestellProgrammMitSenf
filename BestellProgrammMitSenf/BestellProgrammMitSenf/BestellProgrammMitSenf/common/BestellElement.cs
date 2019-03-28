@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace BestellProgrammMitSenf.common
 {
-    public class Speise
+    public class BestellElement
     {
         public long SpeiseNr;
-        public long BildNr;
-        public string Beschreibung;
-        public string Name;
-        public double StandardPreis;
-        public double StandardKosten;
+        public long SpeiseGroessenID;
+        public long Anzahl;
+        public List<long> ExtraZutaten;
     }
 }

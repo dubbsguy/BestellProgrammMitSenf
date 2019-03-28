@@ -8,7 +8,6 @@ namespace BestellProgrammMitSenf.common
 {
     public class Kunde
     {
-        public long KundenNr;
         public string Name;
         public string Vorname;
         public string Firmierung;

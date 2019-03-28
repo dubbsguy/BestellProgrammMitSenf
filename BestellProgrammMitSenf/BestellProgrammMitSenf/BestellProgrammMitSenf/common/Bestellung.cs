@@ -9,12 +9,10 @@ namespace BestellProgrammMitSenf.common
 {
     public class Bestellung
     {
-        public long BestellNr;
-        public OracleDate Bestelldatum;
         public long KundenNr;
-        public string Beschreibung; //Name Vorname Speise
-        public string Groesse;
-        public long Anzahl;
-        public string Extras;
+        public long ZahlungsartNr;
+        public long LieferadressNr;
+        public OracleDate Bestelldatum;
+        public List<BestellElement> bestellElemente;
     }
 }
