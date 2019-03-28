@@ -8,7 +8,6 @@ namespace BestellProgrammMitSenf.common
 {
     public class Adresse
     {
-        public long AdressNr;
         public long PLZ;
         public string Ort;
         public string Strasse;

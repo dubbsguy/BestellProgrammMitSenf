@@ -46,6 +46,87 @@ public class DbAccess
         return kostenLaufenderMonat;
     }
 
+    public void insertBestellung( Bestellung bestellung )
+    {
+        conn.Open();
+        //Bestellung Speichern
+        OracleCommand command = new OracleCommand("INSERT INTO Bestellung( KundenNr, LieferadressNr, ZahlungsartNr, Bestelldatum ) VALUES(:pKundenNr, :pLieferadressNr, :pZahlungsartNr, :pBestelldatum)", conn);
+        command.Parameters.Add(new OracleParameter("pKundenNr", bestellung.KundenNr ) );
+        command.Parameters.Add(new OracleParameter("pLieferadressNr", bestellung.LieferadressNr ) );
+        command.Parameters.Add(new OracleParameter("pZahlungsartNr", bestellung.ZahlungsartNr ) );
+        command.Parameters.Add(new OracleParameter("pBestelldatum", bestellung.Bestelldatum ) );
+        command.ExecuteNonQuery();
+        command.Transaction.Commit();
+        //BestellElemente Speichern
+        foreach (BestellElement element in bestellung.bestellElemente)
+        {
+            long bestellNr = ladeBestellNr(bestellung, conn);
+            insertBestellElement(element, bestellNr);
+            //ExtraZutaten speichern
+            foreach (long zutat in element.ExtraZutaten)
+            {
+                long bestellElementNr = ladeBestellElemenNr(element, bestellNr, conn);
+                insertExtraZutat(zutat, bestellElementNr );
+            }
+        }
+        conn.Close();
+    }
+
+    private long ladeBestellNr(Bestellung bestellung, OracleConnection conn)
+    {
+        conn.Open();
+        OracleCommand command = new OracleCommand("Select bestellNr from Bestellung where KundenNr = :pKundenNr and LieferadressNr = :pLieferadressNr and ZahlungsartNr = :pZahlungsartNr and Bestelldatum = :pBestelldatum", conn);
+        command.Parameters.Add(new OracleParameter("pKundenNr", bestellung.KundenNr));
+        command.Parameters.Add(new OracleParameter("pLieferadressNr", bestellung.LieferadressNr));
+        command.Parameters.Add(new OracleParameter("pZahlungsartNr", bestellung.ZahlungsartNr));
+        command.Parameters.Add(new OracleParameter("pBestelldatum", bestellung.Bestelldatum));
+        OracleDataReader reader = command.ExecuteReader();
+        long BestellNr = reader.GetInt64(0);
+        conn.Close();
+        return BestellNr;
+    }
+
+    private int insertBestellElement(BestellElement element, long bestellNr)
+    {
+        conn.Open();
+        OracleCommand command = new OracleCommand("INSERT INTO BestellElement( SpeiseNr, bestellNr, SpeiseGroessenID, Anzahl ) VALUES(:pSpeiseNr, :pBestellNr, :pSpeiseGroessenID, :pAnzahl)", conn);
+        command.Parameters.Add(new OracleParameter("pSpeiseNr", element.SpeiseNr));
+        command.Parameters.Add(new OracleParameter("pBestellNr", bestellNr));
+        command.Parameters.Add(new OracleParameter("pSpeiseGroessenID", element.SpeiseGroessenID));
+        command.Parameters.Add(new OracleParameter("pAnzahl", element.Anzahl));
+        int resultstate = command.ExecuteNonQuery();
+        command.Transaction.Commit();
+        conn.Close();
+        return resultstate;
+    }
+
+    private long ladeBestellElemenNr(BestellElement element, long bestellNr, OracleConnection conn)
+    {
+        conn.Open();
+        OracleCommand command = new OracleCommand("Select bestellElementNr from BestellElement where SpeiseNr = :pSpeiseNr and bestellNr = :pBestellNr and SpeiseGroessenID = :pSpeiseGroessenID and Anzahl = :pAnzahl", conn);
+        command.Parameters.Add(new OracleParameter("pSpeiseNr", element.SpeiseNr));
+        command.Parameters.Add(new OracleParameter("pBestellNr", bestellNr));
+        command.Parameters.Add(new OracleParameter("pSpeiseGroessenID", element.SpeiseGroessenID));
+        command.Parameters.Add(new OracleParameter("pAnzahl", element.Anzahl));
+        OracleDataReader reader = command.ExecuteReader();
+        long BestellElemenNr =  reader.GetInt64(0);
+        conn.Close();
+        return BestellElemenNr;
+    }
+
+    private int insertExtraZutat(long ZutatNr, long bestellElementNr)
+    {
+        conn.Open();
+        OracleCommand command = new OracleCommand("INSERT INTO ExtraZutat( ZutatNr, bestellElementNr ) VALUES(:pZutatNr, :pbestellElementNr)", conn);
+        command.Parameters.Add(new OracleParameter("pZutatNr", ZutatNr));
+        command.Parameters.Add(new OracleParameter("pbestellElementNr", bestellElementNr ));
+        int resultstate = command.ExecuteNonQuery();
+        command.Transaction.Commit();
+        conn.Close();
+        return resultstate;
+    }
+
+
     public double ladeKostenTaeglich()
     {
         conn.Open();
@@ -170,7 +251,6 @@ public class DbAccess
         if (reader.Read())
         {
             adresse = new Adresse();
-            adresse.AdressNr = reader.GetInt64(0);
             adresse.PLZ = reader.GetInt64(1);
             adresse.Ort = reader.GetString(2);
             adresse.Strasse = reader.GetString(3);
