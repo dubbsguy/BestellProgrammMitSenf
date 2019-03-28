@@ -57,19 +57,25 @@ public class DbAccess
         command.Parameters.Add(new OracleParameter("pBestelldatum", bestellung.Bestelldatum ) );
         command.ExecuteNonQuery();
         command.Transaction.Commit();
+        long bestellNr = ladeBestellNr(bestellung, conn);
         //BestellElemente Speichern
         foreach (BestellElement element in bestellung.bestellElemente)
         {
-            long bestellNr = ladeBestellNr(bestellung, conn);
             insertBestellElement(element, bestellNr);
+            long bestellElementNr = ladeBestellElemenNr(element, bestellNr, conn);
             //ExtraZutaten speichern
             foreach (long zutat in element.ExtraZutaten)
             {
-                long bestellElementNr = ladeBestellElemenNr(element, bestellNr, conn);
                 insertExtraZutat(zutat, bestellElementNr );
             }
         }
         conn.Close();
+        insertRechnung(bestellNr, getPreisVonBestellung(bestellNr));
+    }
+
+    public double getPreisVonBestellung(long BestellNr)
+    {
+        return 0; //ToDo
     }
 
     private long ladeBestellNr(Bestellung bestellung, OracleConnection conn)
@@ -126,6 +132,17 @@ public class DbAccess
         return resultstate;
     }
 
+    private int insertRechnung( long BestellNr, double Betrag )
+    {
+        conn.Open();
+        OracleCommand command = new OracleCommand("INSERT INTO Rechnung( BestellNr, Betrag ) VALUES(:pBestellNr, :pBetrag)", conn);
+        command.Parameters.Add(new OracleParameter("pBestellNr", BestellNr));
+        command.Parameters.Add(new OracleParameter("pBetrag", Betrag));
+        int resultstate = command.ExecuteNonQuery();
+        command.Transaction.Commit();
+        conn.Close();
+        return resultstate;
+    }
 
     public double ladeKostenTaeglich()
     {
