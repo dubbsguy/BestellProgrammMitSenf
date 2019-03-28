@@ -1654,10 +1654,10 @@ namespace BestellProgrammMitSenf {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public BESTELLUNGRow AddBESTELLUNGRow(long BESTELLNR, KUNDERow parentKUNDERowByFK_BESTELLUNG_KUNDENNR, ZAHLUNGSARTRow parentZAHLUNGSARTRowByFK_BESTELLUNG_ZAHLUNGSARTNR, ADRESSERow parentADRESSERowByFK_BESTELLUNG_LIEFERADRESSNR, System.DateTime DATUM) {
+            public BESTELLUNGRow AddBESTELLUNGRow(KUNDERow parentKUNDERowByFK_BESTELLUNG_KUNDENNR, ZAHLUNGSARTRow parentZAHLUNGSARTRowByFK_BESTELLUNG_ZAHLUNGSARTNR, ADRESSERow parentADRESSERowByFK_BESTELLUNG_LIEFERADRESSNR, System.DateTime DATUM) {
                 BESTELLUNGRow rowBESTELLUNGRow = ((BESTELLUNGRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        BESTELLNR,
+                        null,
                         null,
                         null,
                         null,
@@ -1722,7 +1722,11 @@ namespace BestellProgrammMitSenf {
                 base.Columns.Add(this.columnDATUM);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnBESTELLNR}, true));
+                this.columnBESTELLNR.AutoIncrement = true;
+                this.columnBESTELLNR.AutoIncrementSeed = -1;
+                this.columnBESTELLNR.AutoIncrementStep = -1;
                 this.columnBESTELLNR.AllowDBNull = false;
+                this.columnBESTELLNR.ReadOnly = true;
                 this.columnBESTELLNR.Unique = true;
             }
             
@@ -9778,9 +9782,8 @@ namespace BestellProgrammMitSenf.DataSet1TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"PIZZA\".\"BESTELLUNG\" (\"BESTELLNR\", \"KUNDENNR\", \"ZAHLUNGSARTNR\", \"LIEF" +
-                "ERADRESSNR\", \"DATUM\") VALUES (:BESTELLNR, :KUNDENNR, :ZAHLUNGSARTNR, :LIEFERADRE" +
-                "SSNR, :DATUM)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"PIZZA\".\"BESTELLUNG\" (\"KUNDENNR\", \"ZAHLUNGSARTNR\", \"LIEFERADRESSNR\", " +
+                "\"DATUM\") VALUES (:KUNDENNR, :ZAHLUNGSARTNR, :LIEFERADRESSNR, :DATUM)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "BESTELLNR";
