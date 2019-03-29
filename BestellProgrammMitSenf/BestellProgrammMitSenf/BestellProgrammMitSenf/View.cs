@@ -267,5 +267,11 @@ namespace BestellProgrammMitSenf
                 }
              }
         }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            Form addFood = new AddFood();
+            addFood.Show();
+        }
     }
 }

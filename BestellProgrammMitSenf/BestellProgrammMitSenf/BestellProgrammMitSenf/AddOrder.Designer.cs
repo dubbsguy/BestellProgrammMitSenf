@@ -47,7 +47,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label1.Location = new System.Drawing.Point(16, 46);
+            this.label1.Location = new System.Drawing.Point(12, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(197, 24);
             this.label1.TabIndex = 5;
@@ -58,7 +58,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 92);
+            this.label3.Location = new System.Drawing.Point(12, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 20);
             this.label3.TabIndex = 7;
@@ -68,7 +68,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 168);
+            this.label4.Location = new System.Drawing.Point(12, 168);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 20);
             this.label4.TabIndex = 8;
@@ -88,7 +88,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(345, 92);
+            this.label6.Location = new System.Drawing.Point(362, 92);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 20);
             this.label6.TabIndex = 10;
@@ -97,7 +97,7 @@
             // kundenNrTxtBox
             // 
             this.kundenNrTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kundenNrTxtBox.Location = new System.Drawing.Point(19, 115);
+            this.kundenNrTxtBox.Location = new System.Drawing.Point(16, 115);
             this.kundenNrTxtBox.Multiline = true;
             this.kundenNrTxtBox.Name = "kundenNrTxtBox";
             this.kundenNrTxtBox.Size = new System.Drawing.Size(266, 38);
@@ -106,7 +106,7 @@
             // zahlungsartNrTxtBox
             // 
             this.zahlungsartNrTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.zahlungsartNrTxtBox.Location = new System.Drawing.Point(19, 191);
+            this.zahlungsartNrTxtBox.Location = new System.Drawing.Point(16, 191);
             this.zahlungsartNrTxtBox.Multiline = true;
             this.zahlungsartNrTxtBox.Name = "zahlungsartNrTxtBox";
             this.zahlungsartNrTxtBox.Size = new System.Drawing.Size(266, 38);
@@ -115,7 +115,7 @@
             // lieferadressNrTxtBox
             // 
             this.lieferadressNrTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lieferadressNrTxtBox.Location = new System.Drawing.Point(349, 115);
+            this.lieferadressNrTxtBox.Location = new System.Drawing.Point(366, 115);
             this.lieferadressNrTxtBox.Multiline = true;
             this.lieferadressNrTxtBox.Name = "lieferadressNrTxtBox";
             this.lieferadressNrTxtBox.Size = new System.Drawing.Size(266, 38);
@@ -142,7 +142,7 @@
             this.saveBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.saveBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.saveBtn.FlatAppearance.BorderSize = 2;
-            this.saveBtn.Location = new System.Drawing.Point(349, 323);
+            this.saveBtn.Location = new System.Drawing.Point(366, 323);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(107, 53);
             this.saveBtn.TabIndex = 11;
@@ -160,7 +160,7 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(349, 191);
+            this.dateTimePicker1.Location = new System.Drawing.Point(366, 191);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(266, 31);
             this.dateTimePicker1.TabIndex = 0;
