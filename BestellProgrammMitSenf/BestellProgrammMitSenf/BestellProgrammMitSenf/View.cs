@@ -47,12 +47,19 @@ namespace BestellProgrammMitSenf
 
         private void View_Load(object sender, EventArgs e)
         {
- 
 
+         
 
-
-
-
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button9.Enabled = false;
+            button10.Enabled = false;
+            button11.Enabled = false;
+            button12.Enabled = false;
+            button13.Enabled = false;
+            button14.Enabled = false;
+            button15.Enabled = false;
+            button20.Enabled = false;
 
             // TODO: Diese Codezeile lädt Daten in die Tabelle "dataSet1.FIXKOSTEN". Sie können sie bei Bedarf verschieben oder entfernen.
             this.fIXKOSTENTableAdapter.Fill(this.dataSet1.FIXKOSTEN);
@@ -67,6 +74,7 @@ namespace BestellProgrammMitSenf
             dataGridView1.DataSource = bESTELLUNGBindingSource;
             rowFilterSet.RowFilterEvent += (s, eventArgs) => { bESTELLUNGBindingSource.Filter = eventArgs.Filter;};
             bESTELLUNGBindingSource.Filter = rowFilterSet.Filter;
+
 
             kUNDETableAdapter.Fill(this.dataSet1.KUNDE);
 
@@ -109,8 +117,6 @@ namespace BestellProgrammMitSenf
             
             dataGridView5.DataSource = oracleDataAdapter;
             dataGridView6.DataSource = oracleDataAdapter;
-
-    
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -126,7 +132,7 @@ namespace BestellProgrammMitSenf
 
         private void button10_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void bestellungenBtn_Click(object sender, EventArgs e)
@@ -190,6 +196,30 @@ namespace BestellProgrammMitSenf
 
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            button2.Enabled = true;
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            button9.Enabled = true;
+        }
+
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView5_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            button20.Enabled = true;
+        }
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
             textBox3.Text = dataSet1.KUNDE[comboBox1.SelectedIndex].NAME;

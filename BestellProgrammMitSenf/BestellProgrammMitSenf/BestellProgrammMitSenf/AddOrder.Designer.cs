@@ -36,10 +36,10 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -102,6 +102,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(266, 38);
             this.textBox2.TabIndex = 13;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -111,6 +112,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(266, 38);
             this.textBox3.TabIndex = 14;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox4
             // 
@@ -120,33 +122,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(266, 38);
             this.textBox4.TabIndex = 15;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_cancel_black_36dp;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.Location = new System.Drawing.Point(525, 323);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 53);
-            this.button1.TabIndex = 12;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_save_black_36dp;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.button5.FlatAppearance.BorderSize = 2;
-            this.button5.Location = new System.Drawing.Point(349, 323);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(107, 53);
-            this.button5.TabIndex = 11;
-            this.button5.UseVisualStyleBackColor = false;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label2
             // 
@@ -166,6 +142,33 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 18;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_cancel_black_36dp;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.Location = new System.Drawing.Point(508, 323);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 53);
+            this.button1.TabIndex = 12;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_save_black_36dp;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.button5.FlatAppearance.BorderSize = 2;
+            this.button5.Location = new System.Drawing.Point(349, 323);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(107, 53);
+            this.button5.TabIndex = 11;
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // AddOrder
             // 
