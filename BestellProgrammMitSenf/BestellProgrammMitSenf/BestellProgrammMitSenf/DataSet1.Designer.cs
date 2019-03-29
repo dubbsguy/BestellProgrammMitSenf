@@ -2857,7 +2857,7 @@ namespace BestellProgrammMitSenf {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public KUNDERow this[int index] {
                 get {
-                    return ((KUNDERow)(this.Rows[index]));
+                    return ((KUNDERow)(this.Rows[index >=0 ? index: 0]));
                 }
             }
             

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -143,7 +142,6 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(266, 38);
             this.textBox5.TabIndex = 25;
-            //this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // textBox6
             // 
@@ -153,7 +151,6 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(266, 38);
             this.textBox6.TabIndex = 26;
-           // this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label1
             // 
@@ -201,7 +198,6 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(266, 38);
             this.textBox8.TabIndex = 34;
-            //this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // label9
             // 
@@ -239,6 +235,7 @@
             this.button5.Size = new System.Drawing.Size(107, 53);
             this.button5.TabIndex = 31;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // maskedTextBox1
             // 
@@ -276,7 +273,6 @@
             this.Controls.Add(this.textBox1);
             this.Name = "AddCustomer";
             this.Text = "Kunde hinzufügen";
-           // this.Load += new System.EventHandler(this.AddCustomer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

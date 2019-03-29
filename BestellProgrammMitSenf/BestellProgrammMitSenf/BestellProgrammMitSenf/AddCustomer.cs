@@ -8,13 +8,16 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BestellProgrammMitSenf.common;
 
 namespace BestellProgrammMitSenf
 {
     public partial class AddCustomer : Form
     {
-        public AddCustomer()
+        View view;
+        public AddCustomer( View view )
         {
+            this.view = view;
             InitializeComponent();
         }
         //TODO: Methode welche überprüft ob die eingebene Emailadresse "valide" ist.
@@ -106,6 +109,25 @@ namespace BestellProgrammMitSenf
         {
             //TODO: Aufruf der oben deklarierten Methode "validEmail".
             validEmail();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DbAccess access = new DbAccess();
+            Kunde kunde = new Kunde();
+            kunde.Name = textBox1.Text;
+            kunde.Vorname = textBox2.Text;
+            kunde.EMail = textBox6.Text;
+            Adresse addresse = new Adresse();
+            kunde.adresse = addresse;
+            addresse.PLZ = long.Parse(maskedTextBox1.Text);
+            addresse.Ort = textBox8.Text;
+            addresse.Strasse = textBox4.Text;
+            addresse.Hausnummer = textBox5.Text;
+            access.insertKunde(kunde);
+            view.kUNDETableAdapter.Update(view.dataSet1);
+            this.Close();
+
         }
     }
 }

@@ -50,13 +50,12 @@ public class DbAccess
     {
         conn.Open();
         //Bestellung Speichern
-        OracleCommand command = new OracleCommand("INSERT INTO Bestellung( KundenNr, LieferadressNr, ZahlungsartNr, Bestelldatum ) VALUES(:pKundenNr, :pLieferadressNr, :pZahlungsartNr, :pBestelldatum)", conn);
+        OracleCommand command = new OracleCommand("INSERT INTO Bestellung( KundenNr, LieferadressNr, ZahlungsartNr, Datum ) VALUES(:pKundenNr, :pLieferadressNr, :pZahlungsartNr, :pBestelldatum)", conn);
         command.Parameters.Add(new OracleParameter("pKundenNr", bestellung.KundenNr ) );
         command.Parameters.Add(new OracleParameter("pLieferadressNr", bestellung.LieferadressNr ) );
         command.Parameters.Add(new OracleParameter("pZahlungsartNr", bestellung.ZahlungsartNr ) );
         command.Parameters.Add(new OracleParameter("pBestelldatum", bestellung.Bestelldatum ) );
         command.ExecuteNonQuery();
-        command.Transaction.Commit();
         long bestellNr = ladeBestellNr(bestellung, conn);
         //BestellElemente Speichern
         foreach (BestellElement element in bestellung.bestellElemente)
@@ -90,15 +89,13 @@ public class DbAccess
 
     private long ladeBestellNr(Bestellung bestellung, OracleConnection conn)
     {
-        conn.Open();
-        OracleCommand command = new OracleCommand("Select bestellNr from Bestellung where KundenNr = :pKundenNr and LieferadressNr = :pLieferadressNr and ZahlungsartNr = :pZahlungsartNr and Bestelldatum = :pBestelldatum", conn);
+        OracleCommand command = new OracleCommand("Select bestellNr from Bestellung where KundenNr = :pKundenNr and LieferadressNr = :pLieferadressNr and ZahlungsartNr = :pZahlungsartNr and Datum = :pBestelldatum", conn);
         command.Parameters.Add(new OracleParameter("pKundenNr", bestellung.KundenNr));
         command.Parameters.Add(new OracleParameter("pLieferadressNr", bestellung.LieferadressNr));
         command.Parameters.Add(new OracleParameter("pZahlungsartNr", bestellung.ZahlungsartNr));
         command.Parameters.Add(new OracleParameter("pBestelldatum", bestellung.Bestelldatum));
         OracleDataReader reader = command.ExecuteReader();
         long BestellNr = reader.GetInt64(0);
-        conn.Close();
         return BestellNr;
     }
 
@@ -111,14 +108,12 @@ public class DbAccess
         command.Parameters.Add(new OracleParameter("pSpeiseGroessenID", element.SpeiseGroessenID));
         command.Parameters.Add(new OracleParameter("pAnzahl", element.Anzahl));
         int resultstate = command.ExecuteNonQuery();
-        command.Transaction.Commit();
         conn.Close();
         return resultstate;
     }
 
     private long ladeBestellElemenNr(BestellElement element, long bestellNr, OracleConnection conn)
     {
-        conn.Open();
         OracleCommand command = new OracleCommand("Select bestellElementNr from BestellElement where SpeiseNr = :pSpeiseNr and bestellNr = :pBestellNr and SpeiseGroessenID = :pSpeiseGroessenID and Anzahl = :pAnzahl", conn);
         command.Parameters.Add(new OracleParameter("pSpeiseNr", element.SpeiseNr));
         command.Parameters.Add(new OracleParameter("pBestellNr", bestellNr));
@@ -126,7 +121,6 @@ public class DbAccess
         command.Parameters.Add(new OracleParameter("pAnzahl", element.Anzahl));
         OracleDataReader reader = command.ExecuteReader();
         long BestellElemenNr =  reader.GetInt64(0);
-        conn.Close();
         return BestellElemenNr;
     }
 
@@ -137,7 +131,6 @@ public class DbAccess
         command.Parameters.Add(new OracleParameter("pZutatNr", ZutatNr));
         command.Parameters.Add(new OracleParameter("pbestellElementNr", bestellElementNr ));
         int resultstate = command.ExecuteNonQuery();
-        command.Transaction.Commit();
         conn.Close();
         return resultstate;
     }
@@ -149,7 +142,6 @@ public class DbAccess
         command.Parameters.Add(new OracleParameter("pBestellNr", BestellNr));
         command.Parameters.Add(new OracleParameter("pBetrag", Betrag));
         int resultstate = command.ExecuteNonQuery();
-        command.Transaction.Commit();
         conn.Close();
         return resultstate;
     }
@@ -173,15 +165,12 @@ public class DbAccess
         insertAdresse( kunde.adresse );
         long AdressNr = loadNrForAdresse(kunde.adresse);
         conn.Open();
-        OracleCommand command = new OracleCommand("INSERT INTO Kunde(AdressNr, Name, Vorname, Email, Telefonnummer) VALUES(:pAdressNr, :pName, :pVorname, :pEmail, :pTelefonnummer)", conn);
-        command.Parameters.Add( new OracleParameter( "pAdressNr", AdressNr ) );
+        OracleCommand command = new OracleCommand("INSERT INTO Kunde(AdresseNr, Name, Vorname, Email) VALUES(:pAdressNr, :pName, :pVorname, :pEmail )", conn);
+        command.Parameters.Add( new OracleParameter( "pAdresseNr", AdressNr ) );
         command.Parameters.Add( new OracleParameter( "pName", kunde.Name ) );
         command.Parameters.Add( new OracleParameter( "pVorname", kunde.Vorname) );
-        command.Parameters.Add( new OracleParameter( "pAdressNr", kunde.Vorname) );
         command.Parameters.Add( new OracleParameter( "pEmail", kunde.EMail ) );
-        command.Parameters.Add( new OracleParameter( "pTelefonnummer", kunde.Telefonnummer ) );
         int resultstate = command.ExecuteNonQuery();
-        command.Transaction.Commit();
         conn.Close();
         return resultstate;
     }
@@ -213,7 +202,6 @@ public class DbAccess
         command.Parameters.Add(new OracleParameter("pStrasse", adresse.Strasse));
         command.Parameters.Add(new OracleParameter("pHausnummer", adresse.Hausnummer));
         int resultstate = command.ExecuteNonQuery();
-        command.Transaction.Commit();
         conn.Close();
         return resultstate;
     }
@@ -225,7 +213,6 @@ public class DbAccess
         OracleCommand command = new OracleCommand("delete from ADRESSE where AdressNr = (select AdressNr from Kunde where KundenNr = :pKundenNr)", conn);
         command.Parameters.Add(new OracleParameter("pKundenNr", KundenNr));
         int resultstate = command.ExecuteNonQuery();
-        command.Transaction.Commit();
         conn.Close();
         return resultstate;
     }
@@ -236,7 +223,6 @@ public class DbAccess
         OracleCommand command = new OracleCommand("delete from Bestellung where BestellNr = : pBestellNr", conn);
         command.Parameters.Add(new OracleParameter("pBestellNr", BestellNr));
         int resultstate = command.ExecuteNonQuery();
-        command.Transaction.Commit();
         conn.Close();
         return resultstate;
     }
@@ -244,13 +230,12 @@ public class DbAccess
 
     public int deleteKunde(long KundenNr)
     {
-        deleteKundenAdresse(KundenNr);
         conn.Open();
         OracleCommand command = new OracleCommand("delete from KUNDE where KundenNr = :pKundenNr", conn);
         command.Parameters.Add(new OracleParameter("pKundenNr", KundenNr));
         int resultstate = command.ExecuteNonQuery();
-        command.Transaction.Commit();
         conn.Close();
+        deleteKundenAdresse(KundenNr);
         return resultstate;
     }
 
@@ -264,7 +249,6 @@ public class DbAccess
         command.Parameters.Add(new OracleParameter("pHausnummer", adresse.Hausnummer));
         command.Parameters.Add(new OracleParameter("pKundenNr", KundenNr));
         int resultstate = command.ExecuteNonQuery();
-        command.Transaction.Commit();
         conn.Close();
         return resultstate;
     }
@@ -279,7 +263,6 @@ public class DbAccess
         command.Parameters.Add(new OracleParameter("pTelefonnummer", kunde.Telefonnummer));
         command.Parameters.Add(new OracleParameter("pKundenNr", KundenNr ));
         int resultstate = command.ExecuteNonQuery();
-        command.Transaction.Commit();
         conn.Close();
         return resultstate;
     }

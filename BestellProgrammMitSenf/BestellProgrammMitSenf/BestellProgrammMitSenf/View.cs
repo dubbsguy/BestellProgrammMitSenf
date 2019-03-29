@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 using Oracle.ManagedDataAccess.Client;
+using BestellProgrammMitSenf.common;
 
 namespace BestellProgrammMitSenf
 {
@@ -51,14 +52,8 @@ namespace BestellProgrammMitSenf
          
 
            // button2.Enabled = false;
-            button3.Enabled = false;
             button9.Enabled = false;
-            button10.Enabled = false;
-            button11.Enabled = false;
-            button12.Enabled = false;
             button13.Enabled = false;
-            button14.Enabled = false;
-            button15.Enabled = false;
             button20.Enabled = false;
 
             // TODO: Diese Codezeile lädt Daten in die Tabelle "dataSet1.FIXKOSTEN". Sie können sie bei Bedarf verschieben oder entfernen.
@@ -86,7 +81,7 @@ namespace BestellProgrammMitSenf
 
         private void button8_Click(object sender, EventArgs e)
         {
-            Form addCustomer = new AddCustomer();
+            Form addCustomer = new AddCustomer( this );
             addCustomer.Show();
         }
 
@@ -153,19 +148,26 @@ namespace BestellProgrammMitSenf
             AddOrder addOrder = ((AddOrder)sender);
             if(addOrder.Save)
             {
+
+                DbAccess access = new DbAccess();
+                Bestellung bestellung = new Bestellung();
+                bestellung.KundenNr = long.Parse(addOrder.KundenNr);
+                bestellung.ZahlungsartNr = long.Parse(addOrder.ZahlungsNr);
+                bestellung.LieferadressNr = long.Parse(addOrder.Lieferadressnr);
                 try
                 {
-                    DataRow dataRow = dataSet1.BESTELLUNG.NewRow();
-                    dataRow.SetField("kundenNr", addOrder.KundenNr);
-                    dataRow.SetField("zahlungsartnr", addOrder.ZahlungsNr);
-                    dataRow.SetField("lieferadressnr", addOrder.Lieferadressnr);
-                    dataRow.SetField("datum", addOrder.Datum);
-                    dataSet1.BESTELLUNG.Rows.Add(dataRow);
+                    Oracle.ManagedDataAccess.Types.OracleDate date = new Oracle.ManagedDataAccess.Types.OracleDate(Convert.ToDateTime(addOrder.Datum));
+                    bestellung.Bestelldatum = date;
                 }
-                catch (Exception e)
-                {
-
-                }
+                catch (Exception e) { }
+                bestellung.bestellElemente = new List<BestellElement>();
+                access.insertBestellung(bestellung);
+                DataRow dataRow = dataSet1.BESTELLUNG.NewRow();
+                dataRow.SetField("kundenNr", addOrder.KundenNr);
+                dataRow.SetField("zahlungsartnr", addOrder.ZahlungsNr);
+                dataRow.SetField("lieferadressnr", addOrder.Lieferadressnr);
+                dataRow.SetField("datum", addOrder.Datum);
+                dataSet1.BESTELLUNG.Rows.Add(dataRow);
             }
         }
 
@@ -258,8 +260,15 @@ namespace BestellProgrammMitSenf
             {
                 try
                 {
-                    int index = bestellungDataGridView1.SelectedRows[0].Index;
-                    dataSet1.BESTELLUNG.RemoveBESTELLUNGRow(dataSet1.BESTELLUNG[index]);
+                    if (bestellungDataGridView1.SelectedRows.Count > 0)
+                    {
+                        int index = bestellungDataGridView1.SelectedRows[0].Index;
+                        DataRow dataRow = dataSet1.BESTELLUNG[index];
+                        long bestellnr = dataRow.Field<long>("bestellnr");
+                        DbAccess access = new DbAccess();
+                        access.deleteBestellung(bestellnr);
+                        bESTELLUNGTableAdapter.Update(dataSet1);
+                    }
                 }
                 catch (Exception)
                 {
@@ -272,6 +281,19 @@ namespace BestellProgrammMitSenf
         {
             Form addFood = new AddFood();
             addFood.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.SelectedRows.Count > 0)
+            {
+                    int index = dataGridView2.SelectedRows[0].Index;
+                    DataRow dataRow = dataSet1.KUNDE[index];
+                    long kundennr = dataRow.Field<long>("kundennr");
+                    DbAccess access = new DbAccess();
+                    access.deleteKunde(kundennr);
+                    kUNDETableAdapter.Update( dataSet1 );
+            }
         }
     }
 }

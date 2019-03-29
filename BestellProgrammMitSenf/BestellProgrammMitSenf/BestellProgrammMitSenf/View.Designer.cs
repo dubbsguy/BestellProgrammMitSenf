@@ -80,9 +80,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kundenHeaderBtn = new System.Windows.Forms.Button();
             this.Finanzen = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.rECHNUNGSNRDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bESTELLNRDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,9 +89,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.rechnungenHeaderBtn = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.fIXKOSTENNRDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bEZEICHNUNGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -586,6 +580,7 @@
             this.button9.TabIndex = 12;
             this.button9.Text = "Kunde löschen";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // dataGridView2
             // 
@@ -702,9 +697,6 @@
             // Finanzen
             // 
             this.Finanzen.BackColor = System.Drawing.Color.SandyBrown;
-            this.Finanzen.Controls.Add(this.button3);
-            this.Finanzen.Controls.Add(this.button10);
-            this.Finanzen.Controls.Add(this.button11);
             this.Finanzen.Controls.Add(this.dataGridView3);
             this.Finanzen.Controls.Add(this.button4);
             this.Finanzen.Controls.Add(this.pictureBox2);
@@ -714,34 +706,6 @@
             this.Finanzen.Size = new System.Drawing.Size(1141, 723);
             this.Finanzen.TabIndex = 3;
             this.Finanzen.Text = "Rechnungen";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(998, 235);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(107, 53);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Rechnung bearbeiten";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(998, 162);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(107, 53);
-            this.button10.TabIndex = 16;
-            this.button10.Text = "Rechnung hinzufügen";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(998, 306);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(107, 53);
-            this.button11.TabIndex = 17;
-            this.button11.Text = "Rechnung löschen";
-            this.button11.UseVisualStyleBackColor = true;
             // 
             // dataGridView3
             // 
@@ -828,9 +792,6 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.SandyBrown;
-            this.tabPage1.Controls.Add(this.button12);
-            this.tabPage1.Controls.Add(this.button14);
-            this.tabPage1.Controls.Add(this.button15);
             this.tabPage1.Controls.Add(this.dataGridView4);
             this.tabPage1.Controls.Add(this.button13);
             this.tabPage1.Controls.Add(this.pictureBox3);
@@ -841,33 +802,6 @@
             this.tabPage1.Size = new System.Drawing.Size(1141, 723);
             this.tabPage1.TabIndex = 4;
             this.tabPage1.Text = "Kosten";
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(998, 235);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(107, 53);
-            this.button12.TabIndex = 24;
-            this.button12.Text = "Rechnung bearbeiten";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(998, 162);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(107, 53);
-            this.button14.TabIndex = 21;
-            this.button14.Text = "Rechnung hinzufügen";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(998, 306);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(107, 53);
-            this.button15.TabIndex = 22;
-            this.button15.Text = "Rechnung löschen";
-            this.button15.UseVisualStyleBackColor = true;
             // 
             // dataGridView4
             // 
@@ -1211,14 +1145,14 @@
         private System.Windows.Forms.TabPage Bestellungen;
         private System.Windows.Forms.TabPage Kunden;
         private System.Windows.Forms.DataGridView bestellungDataGridView1;
-        private DataSet1 dataSet1;
+        public DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource bESTELLUNGBindingSource;
         private DataSet1TableAdapters.BESTELLUNGTableAdapter bESTELLUNGTableAdapter;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.BindingSource kUNDEBindingSource;
-        private DataSet1TableAdapters.KUNDETableAdapter kUNDETableAdapter;
+        public DataSet1TableAdapters.KUNDETableAdapter kUNDETableAdapter;
         private System.Windows.Forms.TabPage Home;
         private System.Windows.Forms.TabPage Finanzen;
         private System.Windows.Forms.Label firmenLbl;
@@ -1252,17 +1186,11 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.BindingSource rECHNUNGBindingSource;
         private DataSet1TableAdapters.RECHNUNGTableAdapter rECHNUNGTableAdapter;
-        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button18;
