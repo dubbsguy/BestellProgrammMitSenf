@@ -64,53 +64,11 @@ namespace BestellProgrammMitSenf
             // this.kUNDETableAdapter.Fill(this.dataSet1.KUNDE);
             // TODO: Diese Codezeile lädt Daten in die Tabelle "dataSet1.BESTELLUNG". Sie können sie bei Bedarf verschieben oder entfernen.
             this.bESTELLUNGTableAdapter.Fill(this.dataSet1.BESTELLUNG);
-            dataGridView1.DataSource = bESTELLUNGBindingSource;
+            bestellungDataGridView1.DataSource = bESTELLUNGBindingSource;
             rowFilterSet.RowFilterEvent += (s, eventArgs) => { bESTELLUNGBindingSource.Filter = eventArgs.Filter;};
             bESTELLUNGBindingSource.Filter = rowFilterSet.Filter;
 
             kUNDETableAdapter.Fill(this.dataSet1.KUNDE);
-
-            OracleConnection con = new OracleConnection("DATA SOURCE=172.16.200.30:1522/bbs2orcl;PASSWORD=Gruppe1;USER ID=PIZZA");
-            OracleDataAdapter oracleDataAdapter = new OracleDataAdapter();
-   
-
-
-            string cmd = @"
-                            SELECT b.BestellNr AS BestellNr,
-                                   b.Datum AS Bestelldatum,
-                                   b.KundenNr AS KundenNr,
-                                   k.Vorname || ' ' || k.Name AS KundenName,
-                                   '#' || be.SpeiseNr || ' ' || s.NAME AS Speise,
-                                   sg.BESCHREIBUNG AS Groesse,
-                                   be.Anzahl AS Anzahl,
-                                   NVL(zu.Name, '---') AS ExtraZutat
-                            FROM Bestellung b
-                            JOIN Kunde k
-                            ON b.KundenNr = k.KundenNr
-                            JOIN Adresse a
-                            ON b.LieferadressNr = a.adressNr
-                            JOIN Zahlungsart z
-                            ON b.ZahlungsartNr = z.ZahlungsartNr
-                            JOIN BestellElement be
-                            ON b.BestellNr = be.BestellNr
-                            JOIN Speise s
-                            ON be.SpeiseNr = s.SpeiseNr
-                            JOIN Speisengroesse sg
-                            ON be.SPEISEGROESSENID = sg.SPEISENGROESSEID
-                            LEFT OUTER JOIN ExtraZutat ez
-                            ON be.BESTELLELEMENTNR = ez.BESTELLELEMENTNR
-                            LEFT OUTER JOIN Zutat zu
-                            ON ez.ZUTATNR = zu.ZutatNr
-                            ";
-
-            // SQL Kommando zum Abfragen der Daten festlegen:
-            oracleDataAdapter.SelectCommand = new OracleCommand(cmd, con);
-            oracleDataAdapter.Fill(dataTable);
-            
-            dataGridView5.DataSource = oracleDataAdapter;
-            dataGridView6.DataSource = oracleDataAdapter;
-
-    
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -177,7 +135,50 @@ namespace BestellProgrammMitSenf
         private void button1_Click(object sender, EventArgs e)
         {
             Form addOrder = new AddOrder();
+            addOrder.FormClosing += InsertRow;
             addOrder.Show();
+            
+        }
+
+        private void InsertRow(object sender, EventArgs eventArgs)
+        {
+            AddOrder addOrder = ((AddOrder)sender);
+            if(addOrder.Save)
+            {
+                try
+                {
+                    DataRow dataRow = dataSet1.BESTELLUNG.NewRow();
+                    dataRow.SetField("kundenNr", addOrder.KundenNr);
+                    dataRow.SetField("zahlungsartnr", addOrder.ZahlungsNr);
+                    dataRow.SetField("lieferadressnr", addOrder.Lieferadressnr);
+                    dataRow.SetField("datum", addOrder.Datum);
+                    dataSet1.BESTELLUNG.Rows.Add(dataRow);
+                }
+                catch (Exception e)
+                {
+
+                }
+            }
+        }
+
+        private void UpdateRow(object sender, EventArgs eventArgs)
+        {
+            AddOrder addOrder = ((AddOrder)sender);
+            if(addOrder.Save)
+            {
+                try
+                {
+                    DataRow dataRow = dataSet1.BESTELLUNG[addOrder.Index];
+                    dataRow.SetField("kundenNr", addOrder.KundenNr);
+                    dataRow.SetField("lieferadressnr", addOrder.Lieferadressnr);
+                    dataRow.SetField("zahlungsartnr", addOrder.ZahlungsNr);
+                    dataRow.SetField("datum", addOrder.Datum);
+                }
+                catch (Exception e)
+                {
+
+                }
+            }
         }
 
         private void Bestellungen_Click(object sender, EventArgs e)
@@ -193,6 +194,46 @@ namespace BestellProgrammMitSenf
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
             textBox3.Text = dataSet1.KUNDE[comboBox1.SelectedIndex].NAME;
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            if(bestellungDataGridView1.SelectedRows.Count > 0)
+            {
+                try
+                {
+                    int index = bestellungDataGridView1.SelectedRows[0].Index;
+                    DataRow dataRow = dataSet1.BESTELLUNG[index];
+                    long lieferadressnr = dataRow.Field<long>("lieferadressnr");
+                    long kundennr = dataRow.Field<long>("kundennr");
+                    long zahlungsnr = dataRow.Field<long>("zahlungsartnr");
+                    DateTime datum = dataRow.Field<DateTime>("datum");
+                    Form addOrder = new AddOrder(index, kundennr, lieferadressnr, zahlungsnr, datum);
+                    addOrder.FormClosing += UpdateRow;
+                    addOrder.Show();
+                } catch (Exception)
+                {
+
+                }
+
+            }
+            
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            if (bestellungDataGridView1.SelectedRows.Count > 0)
+            {
+                try
+                {
+                    int index = bestellungDataGridView1.SelectedRows[0].Index;
+                    dataSet1.BESTELLUNG.RemoveBESTELLUNGRow(dataSet1.BESTELLUNG[index]);
+                }
+                catch (Exception)
+                {
+
+                }
+             }
         }
     }
 }

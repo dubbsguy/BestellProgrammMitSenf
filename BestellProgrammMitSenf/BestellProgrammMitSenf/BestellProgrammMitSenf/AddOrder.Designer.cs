@@ -33,11 +33,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.kundenNrTxtBox = new System.Windows.Forms.TextBox();
+            this.zahlungsartNrTxtBox = new System.Windows.Forms.TextBox();
+            this.lieferadressNrTxtBox = new System.Windows.Forms.TextBox();
+            this.AbortBtn = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
@@ -94,59 +94,60 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "LieferadressNr";
             // 
-            // textBox2
+            // kundenNrTxtBox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(19, 115);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(266, 38);
-            this.textBox2.TabIndex = 13;
+            this.kundenNrTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kundenNrTxtBox.Location = new System.Drawing.Point(19, 115);
+            this.kundenNrTxtBox.Multiline = true;
+            this.kundenNrTxtBox.Name = "kundenNrTxtBox";
+            this.kundenNrTxtBox.Size = new System.Drawing.Size(266, 38);
+            this.kundenNrTxtBox.TabIndex = 13;
             // 
-            // textBox3
+            // zahlungsartNrTxtBox
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(19, 191);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(266, 38);
-            this.textBox3.TabIndex = 14;
+            this.zahlungsartNrTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.zahlungsartNrTxtBox.Location = new System.Drawing.Point(19, 191);
+            this.zahlungsartNrTxtBox.Multiline = true;
+            this.zahlungsartNrTxtBox.Name = "zahlungsartNrTxtBox";
+            this.zahlungsartNrTxtBox.Size = new System.Drawing.Size(266, 38);
+            this.zahlungsartNrTxtBox.TabIndex = 14;
             // 
-            // textBox4
+            // lieferadressNrTxtBox
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(349, 115);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(266, 38);
-            this.textBox4.TabIndex = 15;
+            this.lieferadressNrTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lieferadressNrTxtBox.Location = new System.Drawing.Point(349, 115);
+            this.lieferadressNrTxtBox.Multiline = true;
+            this.lieferadressNrTxtBox.Name = "lieferadressNrTxtBox";
+            this.lieferadressNrTxtBox.Size = new System.Drawing.Size(266, 38);
+            this.lieferadressNrTxtBox.TabIndex = 15;
             // 
-            // button1
+            // AbortBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_cancel_black_36dp;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.Location = new System.Drawing.Point(525, 323);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 53);
-            this.button1.TabIndex = 12;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.AbortBtn.BackColor = System.Drawing.Color.Transparent;
+            this.AbortBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_cancel_black_36dp;
+            this.AbortBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.AbortBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.AbortBtn.FlatAppearance.BorderSize = 2;
+            this.AbortBtn.Location = new System.Drawing.Point(525, 323);
+            this.AbortBtn.Name = "AbortBtn";
+            this.AbortBtn.Size = new System.Drawing.Size(107, 53);
+            this.AbortBtn.TabIndex = 12;
+            this.AbortBtn.UseVisualStyleBackColor = false;
+            this.AbortBtn.Click += new System.EventHandler(this.AbortBtn_Click);
             // 
-            // button5
+            // saveBtn
             // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_save_black_36dp;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.button5.FlatAppearance.BorderSize = 2;
-            this.button5.Location = new System.Drawing.Point(349, 323);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(107, 53);
-            this.button5.TabIndex = 11;
-            this.button5.UseVisualStyleBackColor = false;
+            this.saveBtn.BackColor = System.Drawing.Color.Transparent;
+            this.saveBtn.BackgroundImage = global::BestellProgrammMitSenf.Properties.Resources.baseline_save_black_36dp;
+            this.saveBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.saveBtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.saveBtn.FlatAppearance.BorderSize = 2;
+            this.saveBtn.Location = new System.Drawing.Point(349, 323);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(107, 53);
+            this.saveBtn.TabIndex = 11;
+            this.saveBtn.UseVisualStyleBackColor = false;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // label2
             // 
@@ -175,11 +176,11 @@
             this.ClientSize = new System.Drawing.Size(698, 409);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.lieferadressNrTxtBox);
+            this.Controls.Add(this.zahlungsartNrTxtBox);
+            this.Controls.Add(this.kundenNrTxtBox);
+            this.Controls.Add(this.AbortBtn);
+            this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -199,11 +200,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.Button AbortBtn;
+        private System.Windows.Forms.TextBox kundenNrTxtBox;
+        private System.Windows.Forms.TextBox zahlungsartNrTxtBox;
+        private System.Windows.Forms.TextBox lieferadressNrTxtBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }

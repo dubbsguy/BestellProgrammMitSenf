@@ -54,7 +54,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.bestellungenHeaderBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bestellungDataGridView1 = new System.Windows.Forms.DataGridView();
             this.bESTELLNRDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kUNDENNRDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zAHLUNGSARTNRDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,7 +62,7 @@
             this.dATUMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bESTELLUNGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new BestellProgrammMitSenf.DataSet1();
-            this.button2 = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.Kunden = new System.Windows.Forms.TabPage();
             this.button6 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -105,6 +105,9 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.kostenHeaderBtn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.button17 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
@@ -124,16 +127,13 @@
             this.rECHNUNGTableAdapter = new BestellProgrammMitSenf.DataSet1TableAdapters.RECHNUNGTableAdapter();
             this.sPEISETableAdapter = new BestellProgrammMitSenf.DataSet1TableAdapters.SPEISETableAdapter();
             this.fIXKOSTENTableAdapter = new BestellProgrammMitSenf.DataSet1TableAdapters.FIXKOSTENTableAdapter();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.aDRESSEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aDRESSETableAdapter = new BestellProgrammMitSenf.DataSet1TableAdapters.ADRESSETableAdapter();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.Home.SuspendLayout();
             this.Bestellungen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPicBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bestellungDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bESTELLUNGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.Kunden.SuspendLayout();
@@ -149,10 +149,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.fIXKOSTENBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPEISEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aDRESSEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -367,8 +367,8 @@
             this.Bestellungen.Controls.Add(this.button5);
             this.Bestellungen.Controls.Add(this.bestellungenHeaderBtn);
             this.Bestellungen.Controls.Add(this.button1);
-            this.Bestellungen.Controls.Add(this.dataGridView1);
-            this.Bestellungen.Controls.Add(this.button2);
+            this.Bestellungen.Controls.Add(this.bestellungDataGridView1);
+            this.Bestellungen.Controls.Add(this.deleteButton);
             this.Bestellungen.Location = new System.Drawing.Point(4, 29);
             this.Bestellungen.Name = "Bestellungen";
             this.Bestellungen.Size = new System.Drawing.Size(1141, 723);
@@ -428,6 +428,7 @@
             this.button16.TabIndex = 7;
             this.button16.Text = "Bestellung bearbeiten";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button5
             // 
@@ -466,23 +467,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
+            // bestellungDataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.bestellungDataGridView1.AutoGenerateColumns = false;
+            this.bestellungDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.bestellungDataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.bestellungDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bestellungDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.bESTELLNRDataGridViewTextBoxColumn,
             this.kUNDENNRDataGridViewTextBoxColumn,
             this.zAHLUNGSARTNRDataGridViewTextBoxColumn,
             this.lIEFERADRESSNRDataGridViewTextBoxColumn,
             this.dATUMDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.bESTELLUNGBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(40, 162);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(920, 518);
-            this.dataGridView1.TabIndex = 0;
+            this.bestellungDataGridView1.DataSource = this.bESTELLUNGBindingSource;
+            this.bestellungDataGridView1.Location = new System.Drawing.Point(40, 162);
+            this.bestellungDataGridView1.Name = "bestellungDataGridView1";
+            this.bestellungDataGridView1.Size = new System.Drawing.Size(920, 518);
+            this.bestellungDataGridView1.TabIndex = 0;
             // 
             // bESTELLNRDataGridViewTextBoxColumn
             // 
@@ -531,14 +532,15 @@
             this.dataSet1.DataSetName = "DataSet1";
             this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // button2
+            // deleteButton
             // 
-            this.button2.Location = new System.Drawing.Point(998, 306);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 53);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Bestellung löschen";
-            this.button2.UseVisualStyleBackColor = true;
+            this.deleteButton.Location = new System.Drawing.Point(998, 306);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(107, 53);
+            this.deleteButton.TabIndex = 4;
+            this.deleteButton.Text = "Bestellung löschen";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // Kunden
             // 
@@ -976,6 +978,32 @@
             this.tabPage2.TabIndex = 5;
             this.tabPage2.Text = "Speisekarte";
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(208, 100);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(182, 26);
+            this.textBox3.TabIndex = 32;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.kUNDEBindingSource;
+            this.comboBox1.DisplayMember = "KUNDENNR";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(208, 34);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(182, 28);
+            this.comboBox1.TabIndex = 31;
+            this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
+            // 
+            // dataGridView6
+            // 
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Location = new System.Drawing.Point(720, 3);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView6.TabIndex = 30;
+            // 
             // button17
             // 
             this.button17.Location = new System.Drawing.Point(998, 235);
@@ -1132,25 +1160,6 @@
             // 
             this.fIXKOSTENTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView6
-            // 
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(666, 34);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView6.TabIndex = 30;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.kUNDEBindingSource;
-            this.comboBox1.DisplayMember = "KUNDENNR";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(208, 34);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(182, 28);
-            this.comboBox1.TabIndex = 31;
-            this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
-            // 
             // aDRESSEBindingSource
             // 
             this.aDRESSEBindingSource.DataMember = "ADRESSE";
@@ -1159,13 +1168,6 @@
             // aDRESSETableAdapter
             // 
             this.aDRESSETableAdapter.ClearBeforeFill = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(208, 100);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(182, 26);
-            this.textBox3.TabIndex = 32;
             // 
             // View
             // 
@@ -1183,7 +1185,7 @@
             this.Bestellungen.ResumeLayout(false);
             this.Bestellungen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPicBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bestellungDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bESTELLUNGBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.Kunden.ResumeLayout(false);
@@ -1200,10 +1202,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPEISEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aDRESSEBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1214,12 +1216,12 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage Bestellungen;
         private System.Windows.Forms.TabPage Kunden;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView bestellungDataGridView1;
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource bESTELLUNGBindingSource;
         private DataSet1TableAdapters.BESTELLUNGTableAdapter bESTELLUNGTableAdapter;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.BindingSource kUNDEBindingSource;
         private DataSet1TableAdapters.KUNDETableAdapter kUNDETableAdapter;
