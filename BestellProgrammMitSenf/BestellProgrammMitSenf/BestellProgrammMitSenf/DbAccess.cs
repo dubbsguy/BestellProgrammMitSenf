@@ -75,7 +75,17 @@ public class DbAccess
 
     public double getPreisVonBestellung(long BestellNr)
     {
-        return 0; //ToDo
+
+        conn.Open();
+        OracleCommand command = new OracleCommand("select Preis from PreisProBestellungView", conn);
+        OracleDataReader reader = command.ExecuteReader();
+        double preis = -1;
+        if (reader.Read())
+        {
+            preis = reader.GetDouble(0);
+        }
+        conn.Close();
+        return preis;
     }
 
     private long ladeBestellNr(Bestellung bestellung, OracleConnection conn)
@@ -252,6 +262,22 @@ public class DbAccess
         command.Parameters.Add(new OracleParameter("pOrt", adresse.Ort));
         command.Parameters.Add(new OracleParameter("pStrasse", adresse.Strasse));
         command.Parameters.Add(new OracleParameter("pHausnummer", adresse.Hausnummer));
+        command.Parameters.Add(new OracleParameter("pKundenNr", KundenNr));
+        int resultstate = command.ExecuteNonQuery();
+        command.Transaction.Commit();
+        conn.Close();
+        return resultstate;
+    }
+
+    public int updateKunde(long KundenNr, Kunde kunde)
+    {
+        conn.Open();
+        OracleCommand command = new OracleCommand("update Kunde set Name =:pName, Vorname = :pVorname, EMail = :pEMail, Telefonnummer = :pTelefonnummer where KundenNr = :pKundenNr", conn);
+        command.Parameters.Add(new OracleParameter("pName", kunde.Name));
+        command.Parameters.Add(new OracleParameter("pVorname", kunde.Vorname));
+        command.Parameters.Add(new OracleParameter("pEMail", kunde.EMail));
+        command.Parameters.Add(new OracleParameter("pTelefonnummer", kunde.Telefonnummer));
+        command.Parameters.Add(new OracleParameter("pKundenNr", KundenNr ));
         int resultstate = command.ExecuteNonQuery();
         command.Transaction.Commit();
         conn.Close();
