@@ -484,6 +484,45 @@
             this.bestellungDataGridView1.Name = "bestellungDataGridView1";
             this.bestellungDataGridView1.Size = new System.Drawing.Size(920, 518);
             this.bestellungDataGridView1.TabIndex = 0;
+            this.bestellungDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.bestellungDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // bESTELLNRDataGridViewTextBoxColumn
+            // 
+            this.bESTELLNRDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.bESTELLNRDataGridViewTextBoxColumn.DataPropertyName = "BESTELLNR";
+            this.bESTELLNRDataGridViewTextBoxColumn.HeaderText = "BESTELLNR";
+            this.bESTELLNRDataGridViewTextBoxColumn.Name = "bESTELLNRDataGridViewTextBoxColumn";
+            this.bESTELLNRDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bESTELLNRDataGridViewTextBoxColumn.Width = 128;
+            // 
+            // kUNDENNRDataGridViewTextBoxColumn
+            // 
+            this.kUNDENNRDataGridViewTextBoxColumn.DataPropertyName = "KUNDENNR";
+            this.kUNDENNRDataGridViewTextBoxColumn.HeaderText = "KUNDENNR";
+            this.kUNDENNRDataGridViewTextBoxColumn.Name = "kUNDENNRDataGridViewTextBoxColumn";
+            this.kUNDENNRDataGridViewTextBoxColumn.Width = 124;
+            // 
+            // zAHLUNGSARTNRDataGridViewTextBoxColumn
+            // 
+            this.zAHLUNGSARTNRDataGridViewTextBoxColumn.DataPropertyName = "ZAHLUNGSARTNR";
+            this.zAHLUNGSARTNRDataGridViewTextBoxColumn.HeaderText = "ZAHLUNGSARTNR";
+            this.zAHLUNGSARTNRDataGridViewTextBoxColumn.Name = "zAHLUNGSARTNRDataGridViewTextBoxColumn";
+            this.zAHLUNGSARTNRDataGridViewTextBoxColumn.Width = 178;
+            // 
+            // lIEFERADRESSNRDataGridViewTextBoxColumn
+            // 
+            this.lIEFERADRESSNRDataGridViewTextBoxColumn.DataPropertyName = "LIEFERADRESSNR";
+            this.lIEFERADRESSNRDataGridViewTextBoxColumn.HeaderText = "LIEFERADRESSNR";
+            this.lIEFERADRESSNRDataGridViewTextBoxColumn.Name = "lIEFERADRESSNRDataGridViewTextBoxColumn";
+            this.lIEFERADRESSNRDataGridViewTextBoxColumn.Width = 183;
+            // 
+            // dATUMDataGridViewTextBoxColumn
+            // 
+            this.dATUMDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dATUMDataGridViewTextBoxColumn.DataPropertyName = "DATUM";
+            this.dATUMDataGridViewTextBoxColumn.HeaderText = "DATUM";
+            this.dATUMDataGridViewTextBoxColumn.Name = "dATUMDataGridViewTextBoxColumn";
             // 
             // bESTELLNRDataGridViewTextBoxColumn
             // 
@@ -607,6 +646,7 @@
             this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView2.Size = new System.Drawing.Size(920, 518);
             this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
             // kUNDENNRDataGridViewTextBoxColumn1
             // 
@@ -758,6 +798,7 @@
             this.dataGridView3.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView3.Size = new System.Drawing.Size(920, 518);
             this.dataGridView3.TabIndex = 15;
+            this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
             // 
             // rECHNUNGSNRDataGridViewTextBoxColumn
             // 
@@ -786,6 +827,7 @@
             // 
             this.rECHNUNGBindingSource.DataMember = "RECHNUNG";
             this.rECHNUNGBindingSource.DataSource = this.dataSet1;
+
             // 
             // button4
             // 
@@ -884,6 +926,86 @@
             this.dataGridView4.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView4.Size = new System.Drawing.Size(920, 518);
             this.dataGridView4.TabIndex = 20;
+            // 
+            // fIXKOSTENNRDataGridViewTextBoxColumn
+            // 
+            this.fIXKOSTENNRDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.fIXKOSTENNRDataGridViewTextBoxColumn.DataPropertyName = "FIXKOSTENNR";
+            this.fIXKOSTENNRDataGridViewTextBoxColumn.HeaderText = "FIXKOSTENNR";
+            this.fIXKOSTENNRDataGridViewTextBoxColumn.Name = "fIXKOSTENNRDataGridViewTextBoxColumn";
+            this.fIXKOSTENNRDataGridViewTextBoxColumn.Width = 147;
+            // 
+            // bEZEICHNUNGDataGridViewTextBoxColumn
+            // 
+            this.bEZEICHNUNGDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.bEZEICHNUNGDataGridViewTextBoxColumn.DataPropertyName = "BEZEICHNUNG";
+            this.bEZEICHNUNGDataGridViewTextBoxColumn.HeaderText = "BEZEICHNUNG";
+            this.bEZEICHNUNGDataGridViewTextBoxColumn.Name = "bEZEICHNUNGDataGridViewTextBoxColumn";
+            this.bEZEICHNUNGDataGridViewTextBoxColumn.Width = 152;
+            // 
+            // bETRAGDataGridViewTextBoxColumn1
+            // 
+            this.bETRAGDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.bETRAGDataGridViewTextBoxColumn1.DataPropertyName = "BETRAG";
+            this.bETRAGDataGridViewTextBoxColumn1.HeaderText = "BETRAG";
+            this.bETRAGDataGridViewTextBoxColumn1.Name = "bETRAGDataGridViewTextBoxColumn1";
+            this.bETRAGDataGridViewTextBoxColumn1.Width = 101;
+            // 
+            // dATUMDataGridViewTextBoxColumn1
+            // 
+            this.dATUMDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dATUMDataGridViewTextBoxColumn1.DataPropertyName = "DATUM";
+            this.dATUMDataGridViewTextBoxColumn1.HeaderText = "DATUM";
+            this.dATUMDataGridViewTextBoxColumn1.Name = "dATUMDataGridViewTextBoxColumn1";
+            // 
+            // fIXKOSTENBindingSource
+            // 
+            this.fIXKOSTENBindingSource.DataMember = "FIXKOSTEN";
+            this.fIXKOSTENBindingSource.DataSource = this.dataSet1;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.SandyBrown;
+            this.tabPage1.Controls.Add(this.button12);
+            this.tabPage1.Controls.Add(this.button14);
+            this.tabPage1.Controls.Add(this.button15);
+            this.tabPage1.Controls.Add(this.dataGridView4);
+            this.tabPage1.Controls.Add(this.button13);
+            this.tabPage1.Controls.Add(this.pictureBox3);
+            this.tabPage1.Controls.Add(this.kostenHeaderBtn);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1141, 723);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "Kosten";
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(998, 235);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(107, 53);
+            this.button12.TabIndex = 24;
+            this.button12.Text = "Rechnung bearbeiten";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(998, 162);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(107, 53);
+            this.button14.TabIndex = 21;
+            this.button14.Text = "Rechnung hinzufügen";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(998, 306);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(107, 53);
+            this.button15.TabIndex = 22;
+            this.button15.Text = "Rechnung löschen";
+            this.button15.UseVisualStyleBackColor = true;
             // 
             // fIXKOSTENNRDataGridViewTextBoxColumn
             // 
@@ -1050,6 +1172,7 @@
             this.dataGridView5.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView5.Size = new System.Drawing.Size(920, 518);
             this.dataGridView5.TabIndex = 25;
+            this.dataGridView5.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellClick);
             // 
             // sPEISENRDataGridViewTextBoxColumn
             // 
@@ -1160,6 +1283,28 @@
             // 
             this.fIXKOSTENTableAdapter.ClearBeforeFill = true;
             // 
+
+
+            // dataGridView6
+            // 
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Location = new System.Drawing.Point(666, 34);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView6.TabIndex = 30;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.kUNDEBindingSource;
+            this.comboBox1.DisplayMember = "KUNDENNR";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(208, 34);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(182, 28);
+            this.comboBox1.TabIndex = 31;
+            this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
+            // 
+
             // aDRESSEBindingSource
             // 
             this.aDRESSEBindingSource.DataMember = "ADRESSE";

@@ -72,9 +72,9 @@
       <DependentUpon>AddOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="common\Adresse.cs" />
+    <Compile Include="common\BestellElement.cs" />
     <Compile Include="common\Bestellung.cs" />
     <Compile Include="common\Kunde.cs" />
-    <Compile Include="common\Speise.cs" />
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -112,6 +112,7 @@
     </Compile>
     <EmbeddedResource Include="View.resx">
       <DependentUpon>View.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="DataSet1.xsc">

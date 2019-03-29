@@ -38,9 +38,21 @@ namespace BestellProgrammMitSenf
             
         }
 
+        //TODO: Methode welche die Eingabe der TextBoxen in den Eingabeformularen überprüft.  
+        private void testTextBox()
+        {
+            /*
+            button5.Enabled = false;
+            if (textBox2.Text.Length != 0 && textBox3.Text.Length != 0 && textBox4.Text.Length != 0)
+            {
+                button5.Enabled = true;
+            }
+            */
+        }
         private void AddOrder_Load(object sender, EventArgs e)
         {
-
+            //TODO: Aufruf der oben deklarierten Methode "testTextBox".
+            testTextBox();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -58,6 +70,7 @@ namespace BestellProgrammMitSenf
 
         }
 
+
         private void saveBtn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -68,5 +81,25 @@ namespace BestellProgrammMitSenf
             this.save = false;
             this.Close();
         }
+            /*
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            //TODO: Aufruf der oben deklarierten Methode "testTextBox".
+            testTextBox();
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            //TODO: Aufruf der oben deklarierten Methode "testTextBox".
+            testTextBox();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            //TODO: Aufruf der oben deklarierten Methode "testTextBox".
+            testTextBox();
+
+        }
+        */
     }
 }
